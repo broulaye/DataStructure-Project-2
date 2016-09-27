@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .metadata
 bin/
 tmp/
@@ -48,3 +49,11 @@ local.properties
 
 # Code Recommenders
 .recommenders/
+=======
+~*
+._*
+.TemporaryItems
+.DS_Store
+Thumbs.db
+>>>>>>> branch 'master' of https://web-cat.cs.vt.edu/Web-CAT/WebObjects/Web-CAT.woa/git/StudentProject/35e9b522-51e8-4159-8199-ee7d762ab7c5
+/bin/
