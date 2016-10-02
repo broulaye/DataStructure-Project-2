@@ -22,6 +22,11 @@ public class IntNode<KVPair extends Comparable<? super KVPair>> extends Node{
         return middle == right && right == left && left == null;
     }
 
+    @Override
+    public boolean isFull() {
+        return leftKey == null && rightKey == null;
+    }
+    
     public KVPair getLeftKey() {
         return leftKey;
     }
@@ -63,6 +68,8 @@ public class IntNode<KVPair extends Comparable<? super KVPair>> extends Node{
     }
 
     
-    
+    public boolean isEqual(IntNode<KVPair> newNode) {
+        return newNode.leftKey.compareTo(this.leftKey) == 0 && newNode.rightKey.compareTo(this.rightKey) == 0; 
+    }
     
 }
