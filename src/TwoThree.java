@@ -311,7 +311,11 @@ public class TwoThree {
         return newNode;
     }
     
-    public String toString(Node<KVPair> root) {
+    public String print() {
+        return toString(root);
+    }
+    
+    private String toString(Node<KVPair> root) {
         StringBuilder newString = new StringBuilder();
         if(root == null) {
             newString.append("");
