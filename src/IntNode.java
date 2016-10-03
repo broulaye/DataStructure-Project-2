@@ -17,20 +17,7 @@ public class IntNode<KVPair extends Comparable<? super KVPair>> extends Node{
         right = null;
         left = null;
     }
-
-    /**
-     * Copy constructor
-     * @param root node to be copied
-     */
-    public IntNode(IntNode<KVPair> root) {
-        left = root.getLeft();
-        right = root.getRight();
-        middle = root.getMiddle();
-        leftKey = root.getLeftKey();
-        rightKey = root.getRightKey();
-    }
-
-    @Override
+    
     public boolean isLeaf() {
         return middle == right && right == left && left == null;
     }
@@ -80,22 +67,9 @@ public class IntNode<KVPair extends Comparable<? super KVPair>> extends Node{
         this.middle = middle;
     }
 
-    @Override
-    public boolean isEqual(Node node) {
-        IntNode newNode = (IntNode) node;
-        return newNode.leftKey.compareTo(this.leftKey) == 0 && newNode.rightKey.compareTo(this.rightKey) == 0;
+    
+    public boolean isEqual(IntNode<KVPair> newNode) {
+        return newNode.leftKey.compareTo(this.leftKey) == 0 && newNode.rightKey.compareTo(this.rightKey) == 0; 
     }
-    public String toString() {
-        StringBuilder builder = new StringBuilder();
-        if(getLeftKey() != null) {
-            builder.append(this.getLeft().toString());
-            if(getMiddle() != null) {
-                builder.append(this.getMiddle().toString());
-                if(getRight() != null) {
-                    builder.append(this.getRight().toString());
-                }
-            }
-        }
-        return builder.toString();
-    }
+    
 }
