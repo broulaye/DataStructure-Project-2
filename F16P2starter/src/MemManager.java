@@ -41,7 +41,7 @@ public class MemManager {
      *            handle referring to position
      */
     public void remove(Handle theHandle) {
-        memoryPool.removeStringAt(theHandle.getLocation());
+        memoryPool.removeStringAt(theHandle.pos());
     }
 
     /**
@@ -62,6 +62,6 @@ public class MemManager {
      */
     public String get(Handle theHandle) {
 
-        return memoryPool.getStringAt(theHandle.getLocation());
+        return memoryPool.getStringAt(theHandle.pos());
     }
 }

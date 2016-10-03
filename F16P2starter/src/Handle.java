@@ -12,7 +12,11 @@ public class Handle
      */
     int thePos;
 
+    /**
+     * defines the state of handle in hash table
+     */
 
+    private boolean tombstone;
     // ----------------------------------------------------------
     /**
      * Create a new Handle object.
@@ -65,5 +69,22 @@ public class Handle
      */
     public String toString() {
         return String.valueOf(thePos);
+    }
+
+    // -----------------------------------------------------------
+    /**
+     * check if handle is tombstone
+     *
+     * @return state of handle
+     */
+    public boolean isTombStone() {
+        return tombstone;
+    }
+    //------------------------------------------------------------
+    /**
+     * set the tombstone
+     */
+    public void setTombstone() {
+        tombstone = true;
     }
 }
