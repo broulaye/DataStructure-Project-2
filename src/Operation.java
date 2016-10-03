@@ -10,7 +10,7 @@ public enum Operation {
     /**
      * Represent the different operations
      */
-    insert, remove, print;
+    insert, remove, print, list, delete, printtree;
 
     /**
      * Get a string representation of the operation
@@ -25,8 +25,17 @@ public enum Operation {
         else if (this == remove) {
             return "remove";
         }
-        else {
+        else if(this == print) {
             return "print";
+        }
+        else if(this == list) {
+            return "list";
+        }
+        else if(this == delete) {
+            return "delete";
+        }
+        else {
+            return "printtree";
         }
     }
 

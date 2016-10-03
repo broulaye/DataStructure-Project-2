@@ -71,27 +71,24 @@ public class LeafNode<KVPair extends Comparable<? super KVPair>> extends Node<KV
     }
 
 
-
+    @Override
     public boolean isLeaf() {
         return true;
     }
-    
-    public boolean isEqual(LeafNode<KVPair> newNode) {
-        return newNode.leftKey.compareTo(this.leftKey) == 0 && newNode.rightKey.compareTo(this.rightKey) == 0; 
+    @Override
+    public boolean isEqual(Node node) {
+        LeafNode newNode = (LeafNode) node;
+        return newNode.leftKey.compareTo(this.leftKey) == 0 && newNode.rightKey.compareTo(this.rightKey) == 0;
     }
-    
+
     public String toString() {
-        if(leftKey == null && rightKey == null) {
-            return "";
+        StringBuilder builder = new StringBuilder();
+        if(this.getLeftKey() != null) {
+            builder.append(this.getLeftKey().toString());
         }
-        else if(leftKey != null && rightKey == null) {
-            return leftKey.toString();
+        if(this.getRightKey() != null) {
+            builder.append(this.getRightKey().toString());
         }
-        else if(leftKey == null && rightKey != null) {
-            return "Illegal State";
-        }
-        else {
-            return leftKey.toString() + "->" + rightKey.toString();
-        }
+        return builder.toString();
     }
 }

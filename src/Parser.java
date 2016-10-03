@@ -87,7 +87,35 @@ public class Parser {
                         value = s.split("");
                         command.setValues(value);
                         break;
-                    default:
+                    case "list":
+                        command.setOp(Operation.list);
+                        if (line[1].equals("song")) {
+                            command.setTyp(Type.Song);
+                        }
+                        else if (line[1].equals("artist")) {
+                            command.setTyp(Type.Artist);
+                        }
+                        else {
+                            System.out.println("Illegal type: " + line[1]);
+                        }
+
+                        for (int i = 2; i < line.length; i++) {
+                            s += line[i] + " ";
+                        }
+                        value[0] = s;
+                        command.setValues(value);
+                        
+                        break;
+                    case "delete":
+                        command.setOp(Operation.delete);
+                        for (int i = 1; i < line.length; i++) {
+                            s += line[i] + " ";
+                        }
+                        value = s.split("<SEP>");
+                        command.setValues(value);
+                        break;
+                    case "printtree":
+                        command.setOp(Operation.printtree);
                         break;
                 }
                 commandsList.add(command);

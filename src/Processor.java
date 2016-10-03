@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.security.interfaces.RSAMultiPrimePrivateCrtKey;
 import java.util.LinkedList;
 
 /**
@@ -15,6 +16,7 @@ public class Processor {
     private Hash songHashTable;
     private Hash artistHashTable;
     private MemManager memoryManager;
+    private TwoThree tree;
 
     /**
      * Constructor that set the fields to provided values
@@ -34,6 +36,7 @@ public class Processor {
         memoryManager = new MemManager(blockSize);
         this.songHashTable = new Hash(hashSize, memoryManager, "song");
         this.artistHashTable = new Hash(hashSize, memoryManager, "artist");
+        tree  = new TwoThree();
 
     }
 
@@ -57,6 +60,13 @@ public class Processor {
                         break;
                     case print:
                         printContent(command.getTyp(), writer);
+                        break;
+                    case printtree:
+                        //TODO: implent print tree
+                        break;
+                    case list:
+                        break;
+                    case delete:
                         break;
                     default:
                         break;
@@ -158,6 +168,14 @@ public class Processor {
                     + "| duplicates a record already in the song database.");
         }
 
+    }
+    
+    /**
+     * this method insert KVpairs in the tree
+     * @param value represent values to be inserted in the tree 
+     */
+    private void insertTree(KVPair value) {
+        
     }
 
 }
