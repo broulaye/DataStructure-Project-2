@@ -1,4 +1,4 @@
-import junit.framework.TestCase;
+import student.TestCase;
 
 /**
  * This class test the enum Operation class

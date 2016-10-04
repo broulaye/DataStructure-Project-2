@@ -1,4 +1,4 @@
-import junit.framework.TestCase;
+import student.*;
 
 /**
  * This class the double linked list

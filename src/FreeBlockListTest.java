@@ -1,4 +1,4 @@
-import junit.framework.TestCase;
+import student.TestCase;
 
 /**
  * tests for free block list

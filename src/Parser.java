@@ -17,7 +17,8 @@ public class Parser {
     /**
      * parse the file name fileN
      *
-     * @param fileN name of the file to be parsed
+     * @param fileN
+     *            name of the file to be parsed
      * @return a list of commands
      */
     public static Commands parse(String fileN) {
@@ -44,10 +45,10 @@ public class Parser {
                 switch (line[0]) {
                     case "insert":
                     case "delete":
-                        if (line[0].equals("insert")){
+                        if (line[0].equals("insert")) {
                             command.setOp(Operation.insert);
                         }
-                        else{
+                        else {
                             command.setOp(Operation.delete);
                         }
                         for (int i = 1; i < line.length; i++) {
@@ -76,10 +77,10 @@ public class Parser {
                         break;
                     case "print":
                     case "list":
-                        if(line[0].equals("list")){
+                        if (line[0].equals("list")) {
                             command.setOp(Operation.list);
                         }
-                        else{
+                        else {
                             command.setOp(Operation.print);
                         }
                         if (line[1].equals("song")) {
@@ -91,7 +92,8 @@ public class Parser {
                         else if (line[0].equals("print")) {
                             if ((line[1].equals("blocks"))) {
                                 command.setTyp(Type.Block);
-                            } else if (line[1].equals("tree")) {
+                            }
+                            else if (line[1].equals("tree")) {
                                 command.setTyp(Type.Tree);
                             }
                             else {
