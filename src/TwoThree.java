@@ -4,14 +4,46 @@ public class TwoThree {
     private Node<KVPair> root;
     
     public void add(KVPair value) {
-        root = add(value, root);
+
+        Node<KVPair> temp1 = add(root, value);
+        // check if tree was initially empty
+        if (root == null) {
+            root = temp1;
+            return;
+        }
+        /**
+         * check type of returned node
+         * if returned node is a leaf node
+         * a split happened else the root was not splt
+         */
+        if(temp1 instanceof IntNode) {
+            IntNode<KVPair> temp2 = (IntNode<KVPair>) temp1;
+            // check if a split happened downstream
+            if(!temp2.isEqual(root)) {
+                IntNode<KVPair> newNode = new IntNode<>();
+                if(temp2.isFull()) { //right split
+                    newNode.setMiddle(temp2);
+                    // copy root
+                    newNode.setLeft(new IntNode<KVPair>((IntNode<KVPair>) root));
+                }
+                else{   // left split
+                    newNode.setMiddle(new IntNode<KVPair>((IntNode<KVPair>) root));
+                    newNode.setLeft(temp2);
+                }
+                // reset root pointer
+                root = newNode;
+            }
+        }
+
     }
     
     
     @SuppressWarnings("unchecked")
-    private Node<KVPair> add(KVPair value, Node<KVPair> root) {
-        if(root == null)
+    private Node<KVPair> add(Node<KVPair> root, KVPair value) {
+        // base case
+        if(root == null) {
             return new LeafNode<KVPair>(value, null);
+        }// check if it's node
         else if(root instanceof LeafNode) {
             LeafNode<KVPair> node = (LeafNode<KVPair>) root;
             if(node.isFull()) {
@@ -21,84 +53,64 @@ public class TwoThree {
                 int compare = value.compareTo(node.getLeftKey());
                 if(compare > 0) {
                     node.setRightKey(value);
-                    return node;
                 }
                 else {
                     node.setRightKey(node.getLeftKey());
                     node.setLeftKey(value);
-                    return node;
                 }
+                return node;
             }
         }
-        int compare = 0;
         
         //check if we are in an Internal node
         if(root instanceof IntNode) {
             
-            Node<KVPair> temp =null;
+            Node<KVPair> temp = null;
             
             //root = ((IntNode<KVPair>)root);
             IntNode<KVPair> node = (IntNode<KVPair>) root;
-            compare = value.compareTo(node.getLeftKey());
-            // The value go the left
+            int compare = value.compareTo(node.getLeftKey());
+
             if(compare < 0) {
-                temp = add(value, node.getLeft());
+                // The value goes left
+                temp = add(node.getLeft(), value);
                 //root = add(value, ((IntNode<KVPair>) root).getLeft());
-                if(temp instanceof LeafNode){
-                    if(!((LeafNode<KVPair>)temp).isEqual((LeafNode<KVPair>)node.getLeft())){
-                        return splitIntLeft(node, temp, ((LeafNode<KVPair>)node.getLeft()).getLeftKey());
+
+                    // if the leaf child has been split, perform a split
+                    if(!temp.isEqual(node.getLeft())){
+                        return splitIntLeft(node, temp);
                     }
                     else {
+                        // else return as is
                         return node;
                     }
-                }
-                else if(temp instanceof IntNode){
-                    if(!((IntNode<KVPair>)temp).isEqual((IntNode<KVPair>)node.getLeft())){
-                        return splitIntLeft(node, temp, ((IntNode<KVPair>)node.getLeft()).getLeftKey());
-                    }
-                    else {
-                        return node;
-                    }
-                }
             }
             else if(compare >= 0) {
+                if(!node.isFull()){
+                    temp = add(node.getMiddle(), value);
+                    if(!temp.isEqual(node.getMiddle())){
+                        return splitIntMiddle(node, temp);
+                    }
+                }
                 compare = value.compareTo(node.getRightKey());
                 
-                // The value go to the right
+                // The value goes to the right
                 if(compare >= 0) {
-                    temp = add(value, node.getRight());
+                    temp = add(node.getRight(), value);
                     //root = add(value, node.getRight());
-                    if(temp instanceof LeafNode){
-                        if(!((LeafNode<KVPair>)temp).isEqual((LeafNode<KVPair>)node.getLeft())){
-                            return splitIntRight(node, temp, ((LeafNode<KVPair>)node.getLeft()).getLeftKey());
+                        if(!temp.isEqual(node.getRight())){
+                            return splitIntRight(node, temp);
                         }
-                    }
-                    else if(temp instanceof IntNode){
-                        if(!((IntNode<KVPair>)temp).isEqual((IntNode<KVPair>)node.getLeft())){
-                            return splitIntRight(node, temp, ((IntNode<KVPair>)node.getLeft()).getLeftKey());
-                        }
-                    }
-                    
-                    return node;
-                    
                 }
                 // The value go in the middle
                 else if(compare < 0) {
-                    temp = add(value, node.getMiddle());
+                    temp = add(node.getMiddle(), value);
                     //root = add(value, node.getMiddle());
-                    if(temp instanceof LeafNode){
-                        if(!((LeafNode<KVPair>)temp).isEqual((LeafNode<KVPair>)node.getLeft())){
-                            return splitIntMiddle(node, temp, ((LeafNode<KVPair>)node.getLeft()).getLeftKey());
-                        }
+                    if(!temp.isEqual(node.getMiddle())) {
+                        return splitIntMiddle(node, temp);
                     }
-                    else if(temp instanceof IntNode){
-                        if(!((IntNode<KVPair>)temp).isEqual((IntNode<KVPair>)node.getLeft())){
-                            return splitIntMiddle(node, temp, ((IntNode<KVPair>)node.getLeft()).getLeftKey());
-                        }
-                    }
-                    
-                    return node;
                 }
+                return node;
             }
         } 
         
@@ -108,38 +120,44 @@ public class TwoThree {
     
     
     @SuppressWarnings("unchecked")
-    public Node<KVPair> splitLeaf(Node<KVPair> root, KVPair value) {
+    private Node<KVPair> splitLeaf(Node<KVPair> root, KVPair value) {
+        // create new leaf
         LeafNode<KVPair> newLeaf = new LeafNode<KVPair>();
         newLeaf.setNext(((LeafNode<KVPair>) root).getNext());
         ((LeafNode<KVPair>) root).setNext(newLeaf);
         newLeaf.setPrevious(((LeafNode<KVPair>) root));
-        IntNode<KVPair> intNode = (IntNode<KVPair>) root;
-        int compare = value.compareTo(intNode.getRightKey());
+        newLeaf.getNext().setPrevious(newLeaf);
+
+        LeafNode<KVPair> rootNode = (LeafNode<KVPair>) root;
+
+        int compare = value.compareTo(rootNode.getRightKey());
         if(compare > 0) {
-            newLeaf.setLeftKey(intNode.getRightKey());
+            newLeaf.setLeftKey(rootNode.getRightKey());
             newLeaf.setRightKey(value);
-            intNode.setRightKey(null);
+            rootNode.setRightKey(null);
         }
         else if(compare < 0) {
-            compare = value.compareTo(intNode.getLeftKey());
+            compare = value.compareTo(rootNode.getLeftKey());
             if(compare >= 0) {
                 newLeaf.setLeftKey(value);
-                newLeaf.setRightKey(intNode.getRightKey());
-                intNode.setRightKey(null);
+                newLeaf.setRightKey(rootNode.getRightKey());
+                rootNode.setRightKey(null);
             }
             if(compare < 0) {
-                newLeaf.setLeftKey(intNode.getLeftKey());
-                newLeaf.setRightKey(intNode.getRightKey());
-                intNode.setRightKey(null);
-                intNode.setLeftKey(value);
+                newLeaf.setLeftKey(rootNode.getLeftKey());
+                newLeaf.setRightKey(rootNode.getRightKey());
+                rootNode.setRightKey(null);
+                rootNode.setLeftKey(value);
             }
         }
         return newLeaf;
     }
     
     @SuppressWarnings("unchecked")
-    public Node<KVPair> splitIntLeft(IntNode<KVPair> currentNode, Node<KVPair> nodeReturned, KVPair upgradedValue) {
-        if (nodeReturned instanceof LeafNode) {
+    private Node<KVPair> splitIntLeft(IntNode<KVPair> currentNode, Node<KVPair> nodeReturned) {
+        KVPair upgradedValue;
+            if (nodeReturned instanceof LeafNode) {
+                upgradedValue = ((LeafNode<KVPair>)nodeReturned).getLeftKey();
             LeafNode<KVPair> leaf = (LeafNode<KVPair>) nodeReturned;
             if(currentNode.getRight() == null) {
                 if(currentNode.getMiddle() == null) {
@@ -160,6 +178,7 @@ public class TwoThree {
         }
         else {
             IntNode<KVPair> IntN = (IntNode<KVPair>) nodeReturned;
+                upgradedValue = ((IntNode<KVPair>)currentNode.getLeft()).getLeftKey();
             if(currentNode.getRight() == null) {
                 if(currentNode.getMiddle() == null) {
                     currentNode.setMiddle(currentNode.getLeft());
@@ -188,17 +207,20 @@ public class TwoThree {
     
     
     @SuppressWarnings("unchecked")
-    public Node<KVPair> splitIntRight(IntNode<KVPair> currentNode, Node<KVPair> nodeReturned, KVPair upgradedValue) {
-        IntNode<KVPair> newNode = new IntNode<KVPair>();
+    private Node<KVPair> splitIntRight(IntNode<KVPair> currentNode, Node<KVPair> nodeReturned) {
+        KVPair upgradedValue;
+        IntNode<KVPair> newNode;
         if (nodeReturned instanceof LeafNode) {
             LeafNode<KVPair> leaf = (LeafNode<KVPair>) nodeReturned;
-            newNode = (IntNode<KVPair>)splitInt2(currentNode, upgradedValue, leaf);
+            upgradedValue = leaf.getLeftKey();
+            newNode = (IntNode<KVPair>)splitInt2(currentNode, upgradedValue);
             
             newNode.setMiddle(leaf);
         }
         else {
             IntNode<KVPair> IntN = (IntNode<KVPair>) nodeReturned;
-            newNode = (IntNode<KVPair>)splitInt2(currentNode, upgradedValue, IntN);  
+            upgradedValue = IntN.getLeftKey();
+            newNode = (IntNode<KVPair>)splitInt2(currentNode, upgradedValue);
             
             newNode.setMiddle(IntN);
         }
@@ -215,28 +237,31 @@ public class TwoThree {
     
     
     @SuppressWarnings("unchecked")
-    public Node<KVPair> splitIntMiddle(IntNode<KVPair> currentNode, Node<KVPair> nodeReturned, KVPair upgradedValue) {
-        IntNode<KVPair> newNode = new IntNode<KVPair>();
+    private Node<KVPair> splitIntMiddle(IntNode<KVPair> currentNode, Node<KVPair> nodeReturned) {
+        IntNode<KVPair> newNode;
+        KVPair upgradedValue;
         if (nodeReturned instanceof LeafNode) {
             LeafNode<KVPair> leaf = (LeafNode<KVPair>) nodeReturned;
+            upgradedValue = leaf.getLeftKey();
             if(currentNode.getRight() == null) {
                 currentNode.setRight(leaf);
                 currentNode.setRightKey(leaf.getLeftKey());
                 return currentNode;
             }
-            newNode = (IntNode<KVPair>)splitInt2(currentNode, upgradedValue, leaf);
+            newNode = (IntNode<KVPair>)splitInt2(currentNode, upgradedValue);
             
             newNode.setMiddle(currentNode.getRight());
             newNode.setLeft(leaf);
         }
         else {
             IntNode<KVPair> IntN = (IntNode<KVPair>) nodeReturned;
+            upgradedValue =IntN.getLeftKey();
             if(currentNode.getRight() == null) {
                 currentNode.setRight(IntN);
                 currentNode.setRightKey(IntN.getLeftKey());
                 return currentNode;
             }
-            newNode = (IntNode<KVPair>)splitInt2(currentNode, upgradedValue, IntN);  
+            newNode = (IntNode<KVPair>)splitInt2(currentNode, upgradedValue);
             
             newNode.setMiddle(currentNode.getRight());
             newNode.setLeft(IntN);
@@ -285,7 +310,7 @@ public class TwoThree {
     }
     
     @SuppressWarnings("unchecked")
-    private Node<KVPair> splitInt2(IntNode<KVPair> currentNode, KVPair upgradedValue, Node<KVPair> nodeReturn) {
+    private Node<KVPair> splitInt2(IntNode<KVPair> currentNode, KVPair upgradedValue) {
         IntNode<KVPair> newNode = new IntNode<KVPair>();
         
         int compare = upgradedValue.compareTo(currentNode.getRightKey());
@@ -311,7 +336,7 @@ public class TwoThree {
         return newNode;
     }
     
-    public String print() {
+    public String printLeaves() {
         return toString(root);
     }
     
@@ -338,5 +363,45 @@ public class TwoThree {
             return toString(node.getLeft());
         }
     }
-    
+    public String toString(){
+        if(root != null){
+            return root.toString();
+        }
+        return "(Empty)";
+    }
+
+    public String print() {
+        if (root != null){
+            return "Printing 2-3 tree:\n" + print(root, 0) + '\n';
+        }
+        return "";
+    }
+
+    private String print(Node<KVPair> node, int depth) {
+        StringBuilder builder = new StringBuilder();
+        if (node == null) {
+            return builder.toString();
+        }
+        for (int it = 0; it < depth; it++){
+            builder.append('\t');
+        }
+        // if root is an internal node
+        if (root instanceof IntNode){
+            // print the two KVPair followed by a newline
+            builder.append(((IntNode) root).getLeftKey().toString());
+            builder.append(((IntNode) root).getRightKey().toString());
+            builder.append('\n');
+            // print subtress in preorder
+            builder.append(print(((IntNode) root).getLeft(), depth + 1));
+            builder.append(print(((IntNode) root).getMiddle(), depth + 1));
+            builder.append(print(((IntNode) root).getRight(), depth + 1));
+        }
+        else{
+            // if root is a leaf node
+            builder.append(((LeafNode) root).getLeftKey().toString());
+            builder.append(((LeafNode)root).getRightKey().toString());
+        }
+        return builder.toString();
+    }
+
 }

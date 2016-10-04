@@ -1,4 +1,3 @@
-import org.junit.Assert;
 import student.TestCase;
 
 import java.io.FileNotFoundException;
@@ -56,8 +55,8 @@ public class HashTest extends TestCase {
         try {
             memManager = new MemManager(80);
             myHash = new Hash(2, memManager, testString);
-            assertTrue(myHash.insertString("broulaye", writer));
-            assertTrue(myHash.insertString("Cheick", writer));
+            assertNotNull(myHash.insertString("broulaye", writer));
+            assertNotNull(myHash.insertString("Cheick", writer));
             assertEquals("|broulaye| 2\n|Cheick| 3\ntotal tests: 2\n",
                     myHash.printTable());
             assertTrue(myHash.removeString("broulaye"));
@@ -67,9 +66,9 @@ public class HashTest extends TestCase {
             assertFalse(myHash.removeString("Cheick"));
             assertEquals("total tests: 0\n", myHash.printTable());
             assertEquals(0, myHash.getElement());
-            assertTrue(myHash.insertString("Cheick", writer));
-            assertTrue(myHash.insertString("Cheicks", writer));
-            assertTrue(myHash.insertString("Cheikc", writer));
+            assertNotNull(myHash.insertString("Cheick", writer));
+            assertNotNull(myHash.insertString("Cheicks", writer));
+            assertNotNull(myHash.insertString("Cheikc", writer));
 
         }
         catch (Exception e) {
@@ -101,10 +100,10 @@ public class HashTest extends TestCase {
         try {
             Hash table = new Hash(3, manager, testString);
             String str = "berthe";
-            boolean result1 = table.insertString(str, writer);
-            boolean result2 = table.insertString(str, writer);
-            assertTrue(result1);
-            assertFalse(result2);
+            Handle result1 = table.insertString(str, writer);
+            Handle result2 = table.insertString(str, writer);
+            assertNotNull(result1);
+            assertNotNull(result2);
         }
         catch (Exception e) {
             assertTrue(e instanceof Exception);
@@ -139,9 +138,9 @@ public class HashTest extends TestCase {
         try {
             Hash table = new Hash(10, manager, testString);
             assertFalse(table.removeString(word));
-            assertTrue(table.insertString(word, writer));
-            assertTrue(table.removeString(word));
-            assertTrue(table.insertString(word, writer));
+            assertNotNull(table.insertString(word, writer));
+            assertNotNull(table.removeString(word));
+            assertNotNull(table.insertString(word, writer));
         }
         catch (Exception e) {
             assertTrue(e instanceof Exception);

@@ -57,7 +57,7 @@ public class SearchTreeTest extends TestCase {
         arguments[1] = "32";
         arguments[2] = "bad-file.txt";
         SearchTree.main(arguments);
-        arguments[2] = "P1SampleInput.txt";
+        arguments[2] = "P2_Input1_Sample.txt";
         SearchTree.main(arguments);
         String value = null;
         assertNull(value);

@@ -43,7 +43,13 @@ public class Parser {
                 String[] line = token.split(" ");
                 switch (line[0]) {
                     case "insert":
-                        command.setOp(Operation.insert);
+                    case "delete":
+                        if (line[0].equals("insert")){
+                            command.setOp(Operation.insert);
+                        }
+                        else{
+                            command.setOp(Operation.delete);
+                        }
                         for (int i = 1; i < line.length; i++) {
                             s += line[i] + " ";
                         }
@@ -69,21 +75,32 @@ public class Parser {
                         command.setValues(value);
                         break;
                     case "print":
-                        command.setOp(Operation.print);
-
+                    case "list":
+                        if(line[0].equals("list")){
+                            command.setOp(Operation.list);
+                        }
+                        else{
+                            command.setOp(Operation.print);
+                        }
                         if (line[1].equals("song")) {
                             command.setTyp(Type.Song);
                         }
                         else if (line[1].equals("artist")) {
                             command.setTyp(Type.Artist);
                         }
-                        else if (line[1].equals("blocks")) {
-                            command.setTyp(Type.Block);
+                        else if (line[0].equals("print")) {
+                            if ((line[1].equals("blocks"))) {
+                                command.setTyp(Type.Block);
+                            } else if (line[1].equals("tree")) {
+                                command.setTyp(Type.Tree);
+                            }
+                            else {
+                                System.out.println("Illegal type: " + line[1]);
+                            }
                         }
                         else {
                             System.out.println("Illegal type: " + line[1]);
                         }
-
                         value = s.split("");
                         command.setValues(value);
                         break;

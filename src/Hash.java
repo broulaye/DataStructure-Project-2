@@ -83,14 +83,15 @@ public class Hash {
      *            (string to insert)
      * @param writer
      *            used to return status of operation
-     * @return position of insertion
+     * @return handle resulting from insertion
      * @throws Exception
      *             when all possible slots have been proved and are occupied
      */
-    public boolean insertString(String str, PrintWriter writer)
+    public Handle insertString(String str, PrintWriter writer)
             throws Exception {
-        if (get(str) != -1) {
-            return false;
+        int position = get(str);
+        if (position != -1) {
+            return valueArray[position];
         }
         if (numbElements + 1 > (valueArray.length >> 1)) {
             doubleSize();
@@ -107,8 +108,9 @@ public class Hash {
         }
         numbElements++;
         // store handle after storing string in memory pool
-        valueArray[pos] = manager.insert(str, writer);
-        return true;
+        Handle aHandle = manager.insert(str, writer);
+        valueArray[pos] = aHandle;
+        return aHandle;
     }
 
     /**

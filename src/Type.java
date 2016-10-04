@@ -10,7 +10,7 @@ public enum Type {
     /**
      * Represent the different types
      */
-    Song, Artist, Block;
+    Song, Tree ,Artist, Block;
 
     /**
      * Get a string representaion of the type

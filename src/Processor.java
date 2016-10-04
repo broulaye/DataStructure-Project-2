@@ -15,7 +15,7 @@ public class Processor {
     private Hash songHashTable;
     private Hash artistHashTable;
     private MemManager memoryManager;
-
+    private TwoThree theTree;
     /**
      * Constructor that set the fields to provided values
      * 
@@ -34,7 +34,7 @@ public class Processor {
         memoryManager = new MemManager(blockSize);
         this.songHashTable = new Hash(hashSize, memoryManager, "song");
         this.artistHashTable = new Hash(hashSize, memoryManager, "artist");
-
+        this.theTree = new TwoThree();
     }
 
     /**
@@ -47,6 +47,13 @@ public class Processor {
             LinkedList<Command> list = commands.getCommandList();
             for (Command command : list) {
                 switch (command.getOp()) {
+                    case list:
+                        list(command.getTyp(), command.getValues()[0], writer);
+                        break;
+                    case delete:
+                        delete(command.getValues()[0], command.getValues()[1],
+                                writer);
+                        break;
                     case insert:
                         insert(command.getValues()[0], command.getValues()[1],
                                 writer);
@@ -71,6 +78,37 @@ public class Processor {
     }
 
     /**
+     * Delete the specifc record for this particular songName by this
+     * particular artistName.
+     * @param artistName artist name
+     * @param songName song of given artist
+     * @param writer output stream
+     */
+    private void delete(String artistName, String songName, PrintWriter writer) {
+    }
+
+    /**
+     *If type is artist then all songs by the artist with name {name}
+     * are listed. If type is song then all artists who have recorded
+     * that song are listed.
+     * @param type artist or song
+     * @param str  string associated with type
+     * @param writer output stream
+     */
+    private void list(Type type, String str, PrintWriter writer) {
+        switch (type) {
+            case Song:
+                //TODO:
+                break;
+            case Artist:
+                //TODO:
+                break;
+            default:
+                break;
+        }
+    }
+
+    /**
      * print content of given type of database
      *
      * @param type
@@ -82,6 +120,9 @@ public class Processor {
         switch (type) {
             case Song:
                 writer.print(songHashTable.printTable());
+                break;
+            case Tree:
+                writer.print(theTree.print());
                 break;
             case Artist:
                 writer.print(artistHashTable.printTable());
@@ -143,20 +184,15 @@ public class Processor {
             throws Exception {
         artist = artist.trim();
         song = song.trim();
-        if (artistHashTable.insertString(artist, writer)) {
-            writer.println("|" + artist + "| is added to the artist database.");
-        }
-        else {
-            writer.println("|" + artist
-                    + "| duplicates a record already in the artist database.");
-        }
-        if (songHashTable.insertString(song, writer)) {
-            writer.println("|" + song + "| is added to the song database.");
-        }
-        else {
-            writer.println("|" + song
-                    + "| duplicates a record already in the song database.");
-        }
+        // First, insert the strings to their respective databases
+        Handle artistHandle = artistHashTable.insertString(artist, writer);
+        Handle songHandle = songHashTable.insertString(song, writer);
+        // create then insert KVPair with song as key and artist value
+        KVPair songAsKey = new KVPair(songHandle, artistHandle);
+        theTree.add(songAsKey);
+        // then create and insert KVPair with artist as key and song as value
+        KVPair artistAsKey = new KVPair(artistHandle, songHandle);
+        theTree.add(artistAsKey);
 
     }
 

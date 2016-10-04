@@ -1,0 +1,1339 @@
+(0,32)
+total songs: 0
+total artists: 0
+|Blind Lemon Jefferson| does not exist in the artist database.
+Memory pool expanded to be 64 bytes.
+|Long Lonesome Blues| 5
+total songs: 1
+|Blind Lemon Jefferson| 0
+total artists: 1
+Memory pool expanded to be 96 bytes.
+(83,13)
+Printing 2-3 tree:
+0 2344 57
+Memory pool expanded to be 128 bytes.
+|Charley Patton| is removed from the artist database.
+Memory pool expanded to be 160 bytes.
+Memory pool expanded to be 192 bytes.
+(83,16) -> (191,1)
+Memory pool expanded to be 224 bytes.
+song hash table size doubled.
+Memory pool expanded to be 256 bytes.
+Memory pool expanded to be 288 bytes.
+Printing 2-3 tree:
+0 2383 57
+|Bukka White| is removed from the artist database.
+|Blind Lemon Jefferson| 0
+|Sleepy John Estes| 1
+|Johnny Winter| 5
+|Another Bukka White| 7
+total artists: 4
+|Mississippi Boweavil Blues| 2
+|Street Car Blues| 5
+|Bukka White's first song| 8
+|Long Lonesome Blues| 15
+|Bukka White's third song| 16
+|Bukka White's second song| 17
+|Bukka White's fourth song| 19
+total songs: 7
+|Bukka White's first song| is removed from the song database.
+|Blind Lemon Jefferson| 0
+|Sleepy John Estes| 1
+|Johnny Winter| 5
+|Another Bukka White| 7
+total artists: 4
+|Mississippi Boweavil Blues| 2
+|Street Car Blues| 5
+|Long Lonesome Blues| 15
+|Bukka White's third song| 16
+|Bukka White's second song| 17
+|Bukka White's fourth song| 19
+total songs: 6
+(72,11) -> (98,1) -> (265,23)
+|Blind Lemon Jefferson| 0
+|Sleepy John Estes| 1
+|Johnny Winter| 5
+|Another Bukka White| 7
+total artists: 4
+|Johnny Winter's first song| 0
+|Mississippi Boweavil Blues| 2
+|Street Car Blues| 5
+|Long Lonesome Blues| 15
+|Bukka White's third song| 16
+|Bukka White's second song| 17
+|Bukka White's fourth song| 19
+total songs: 7
+Printing 2-3 tree:
+0 23265 44
+Memory pool expanded to be 320 bytes.
+Memory pool expanded to be 352 bytes.
+Printing 2-3 tree:
+0 23265 288
+Memory pool expanded to be 384 bytes.
+Printing 2-3 tree:
+0 23265 345
+song hash table size doubled.
+Memory pool expanded to be 416 bytes.
+|Bukka White| does not exist in the artist database.
+Printing 2-3 tree:
+0 23265 374
+artist hash table size doubled.
+Memory pool expanded to be 448 bytes.
+Memory pool expanded to be 480 bytes.
+Memory pool expanded to be 512 bytes.
+Memory pool expanded to be 544 bytes.
+Printing 2-3 tree:
+0 2383 492
+Memory pool expanded to be 576 bytes.
+Memory pool expanded to be 608 bytes.
+artist hash table size doubled.
+Memory pool expanded to be 640 bytes.
+Memory pool expanded to be 672 bytes.
+Memory pool expanded to be 704 bytes.
+Memory pool expanded to be 736 bytes.
+Memory pool expanded to be 768 bytes.
+song hash table size doubled.
+|Blind Lemon Jefferson| 0
+|Happy Mondays| 2
+|Sleepy John Estes| 10
+|Bruce Rowland| 26
+|Cheo Feliciano| 27
+|Another Johnny Winter| 28
+|Thomas Dolby| 29
+|Tim Wilson| 30
+|Rita Chiarelli| 31
+|Ennio Morricone| 33
+|Johnny Winter| 35
+|Kings Of Leon| 36
+|Another Bukka White| 37
+|Tiny Bradshaw| 39
+total artists: 14
+|Bruce Rowland| is removed from the artist database.
+(81,2) -> (98,1) -> (402,15) -> (765,3)
+|Thomas Dolby| is removed from the artist database.
+(81,2) -> (98,1) -> (402,15) -> (433,14) -> (765,3)
+|Mountain Theme| is removed from the song database.
+(81,2) -> (98,1) -> (402,45) -> (765,3)
+|Johnny Winter's second song| 3
+|Bukka White's third song| 4
+|Street Car Blues| 5
+|Sporco Ma Distinto| 15
+|Wrote For Luck (12 - Remastered version)| 20
+|Doggin' Around| 28
+|Well Oh Well| 30
+|Johnny Winter's fifth song| 31
+|Be Careful With A Fool| 33
+|Johnny Winter's third song| 41
+|Wicker Chair| 52
+|Bukka White's second song| 57
+|Johnny Winter's first song| 59
+|I Think My Wife Is Running Around On Me (Taco Hell)| 61
+|Mississippi Boweavil Blues| 62
+|Sarah Yellin'| 63
+|She Blinded Me With Science| 64
+|Bukka White's fourth song| 75
+|Long Lonesome Blues| 76
+|Johnny Winter's fourth song| 77
+|Juguete| 79
+total songs: 21
+(81,2) -> (98,1) -> (431,16) -> (765,3)
+Memory pool expanded to be 800 bytes.
+Memory pool expanded to be 832 bytes.
+Memory pool expanded to be 864 bytes.
+Memory pool expanded to be 896 bytes.
+Memory pool expanded to be 928 bytes.
+Memory pool expanded to be 960 bytes.
+Memory pool expanded to be 992 bytes.
+artist hash table size doubled.
+Memory pool expanded to be 1024 bytes.
+Memory pool expanded to be 1056 bytes.
+Memory pool expanded to be 1088 bytes.
+Memory pool expanded to be 1120 bytes.
+Memory pool expanded to be 1152 bytes.
+Memory pool expanded to be 1184 bytes.
+|All Time Low| is removed from the artist database.
+(81,2) -> (98,1) -> (446,1) -> (819,14) -> (1168,16)
+Memory pool expanded to be 1216 bytes.
+Memory pool expanded to be 1248 bytes.
+Memory pool expanded to be 1280 bytes.
+|For You| is removed from the song database.
+|My God (Audio Adrenaline Album Version)| is removed from the song database.
+(81,2) -> (98,1) -> (446,1) -> (1024,41) -> (1159,9) -> (1277,3)
+(81,2) -> (98,1) -> (446,1) -> (1037,28) -> (1164,4) -> (1277,3)
+Memory pool expanded to be 1312 bytes.
+Memory pool expanded to be 1344 bytes.
+Memory pool expanded to be 1376 bytes.
+Memory pool expanded to be 1408 bytes.
+Memory pool expanded to be 1440 bytes.
+Memory pool expanded to be 1472 bytes.
+Memory pool expanded to be 1504 bytes.
+song hash table size doubled.
+Memory pool expanded to be 1536 bytes.
+Memory pool expanded to be 1568 bytes.
+Memory pool expanded to be 1600 bytes.
+Memory pool expanded to be 1632 bytes.
+Memory pool expanded to be 1664 bytes.
+Memory pool expanded to be 1696 bytes.
+Memory pool expanded to be 1728 bytes.
+Memory pool expanded to be 1760 bytes.
+|Over The Hill| does not exist in the song database.
+(81,2) -> (98,1) -> (446,1) -> (1061,4) -> (1164,4) -> (1733,27)
+artist hash table size doubled.
+Memory pool expanded to be 1792 bytes.
+Memory pool expanded to be 1824 bytes.
+Memory pool expanded to be 1856 bytes.
+|Tilman Sillescu| is removed from the artist database.
+(81,2) -> (98,1) -> (446,1) -> (1164,4) -> (1796,17) -> (1841,15)
+Memory pool expanded to be 1888 bytes.
+Memory pool expanded to be 1920 bytes.
+Memory pool expanded to be 1952 bytes.
+Memory pool expanded to be 1984 bytes.
+Memory pool expanded to be 2016 bytes.
+Memory pool expanded to be 2048 bytes.
+Memory pool expanded to be 2080 bytes.
+Memory pool expanded to be 2112 bytes.
+Memory pool expanded to be 2144 bytes.
+Memory pool expanded to be 2176 bytes.
+|C'Etait Bien| is removed from the song database.
+(81,2) -> (98,1) -> (446,1) -> (1811,2) -> (2140,14) -> (2163,13)
+|Baggage| is removed from the song database.
+(81,2) -> (98,1) -> (446,1) -> (1811,2) -> (2140,36)
+|L7| is removed from the artist database.
+(81,2) -> (98,1) -> (446,1) -> (1164,4) -> (1811,2) -> (2140,36)
+|Loop Guru| 1
+|Happy Mondays| 2
+|Dons| 4
+|Faithless| 5
+|Buddy Miles| 7
+|Funeral For A Friend| 8
+|Sleepy John Estes| 10
+|Barenaked Ladies| 24
+|Cheo Feliciano| 26
+|Tim Wilson| 27
+|Another Johnny Winter| 28
+|Michael Gettel| 30
+|Rita Chiarelli| 31
+|Akon| 33
+|Dave Eggar| 37
+|Novaspace| 38
+|Audio Adrenaline| 46
+|8Ball & MJG| 49
+|Dream Warriors| 53
+|Carl Smith| 55
+|Chris Clark| 56
+|Mr. Lif| 57
+|Liam O'Flynn| 60
+|Jean Corti| 62
+|Jesus Jones| 75
+|Kings Of Leon| 76
+|Kyle Riabko| 77
+|Paula Santoro| 78
+|Tiny Bradshaw| 79
+|Blind Lemon Jefferson| 80
+|Open Hand| 83
+|John Cale| 88
+|DJ Quik| 89
+|Gary Moore| 90
+|Esperanza Spalding / Leo Genovese| 91
+|No Address| 101
+|3 Doors Down| 102
+|Aeoliah| 106
+|Gerard Lenorman| 107
+|themselves| 108
+|Green Day| 110
+|Johnny Winter| 115
+|Another Bukka White| 117
+|Chelsea| 118
+|Sylver| 120
+|Y&T| 121
+|The Ruby Suns| 122
+|Hot Chip| 139
+|Charlie Peacock| 142
+|Ennio Morricone| 149
+total artists: 50
+(81,2) -> (98,1) -> (446,1) -> (1164,4) -> (1811,2) -> (2140,36)
+Memory pool expanded to be 2208 bytes.
+|Bruce Rowland| is removed from the artist database.
+|Mountain Theme| is removed from the song database.
+|akkkk| does not exist in the artist database.
+|Over The Edge| is removed from the song database.
+Memory pool expanded to be 2240 bytes.
+|Kyle Riabko| is removed from the artist database.
+|Carl Smith| is removed from the artist database.
+|Jesus Jones| is removed from the artist database.
+|Loop Guru| is removed from the artist database.
+|Sylver| is removed from the artist database.
+|Dons| is removed from the artist database.
+|Dons| does not exist in the artist database.
+|Dons| does not exist in the artist database.
+|Dons| does not exist in the artist database.
+|Happy Mondays| 2
+|Faithless| 5
+|Buddy Miles| 7
+|Funeral For A Friend| 8
+|Sleepy John Estes| 10
+|Barenaked Ladies| 24
+|Cheo Feliciano| 26
+|Tim Wilson| 27
+|Another Johnny Winter| 28
+|Michael Gettel| 30
+|Rita Chiarelli| 31
+|Akon| 33
+|Dave Eggar| 37
+|Novaspace| 38
+|Audio Adrenaline| 46
+|8Ball & MJG| 49
+|Dream Warriors| 53
+|Chris Clark| 56
+|Mr. Lif| 57
+|Liam O'Flynn| 60
+|Jean Corti| 62
+|Thomas Dolby| 68
+|Kings Of Leon| 76
+|Paula Santoro| 78
+|Tiny Bradshaw| 79
+|Blind Lemon Jefferson| 80
+|Open Hand| 83
+|All Time Low| 85
+|John Cale| 88
+|DJ Quik| 89
+|Gary Moore| 90
+|Esperanza Spalding / Leo Genovese| 91
+|No Address| 101
+|3 Doors Down| 102
+|Aeoliah| 106
+|Gerard Lenorman| 107
+|themselves| 108
+|Green Day| 110
+|Johnny Winter| 115
+|Another Bukka White| 117
+|Chelsea| 118
+|Y&T| 121
+|The Ruby Suns| 122
+|Hot Chip| 139
+|Charlie Peacock| 142
+|Ennio Morricone| 149
+total artists: 46
+|Johnny Winter's second song| 3
+|Street Car Blues| 5
+|Sound Clash (featuring Beenie Man) - FattaSly Extended Mix| 9
+|Wake Me Up When September Ends (Live at Foxboro_ MA 9/3/05)| 12
+|No| 14
+|My God (Audio Adrenaline Album Version)| 19
+|Wrote For Luck (12 - Remastered version)| 20
+|If That's True| 25
+|Doggin' Around| 28
+|Pimpin' Don't Fail Me Now [Featuring Jazze Pha and Juvenile] (Explicit Album Version)| 29
+|Dancing With Tears In My Eyes 2004 (Nova Mix (Club Version))| 30
+|Pretty Girl (Amended Version)| 31
+|Safe Passage| 38
+|If You Should Walk Away| 39
+|Deep Blue| 41
+|Soldats Ne Tirez Pas| 43
+|Shameless| 44
+|Escape From The Underrealm| 46
+|This Is Where It Ends (Album Version)| 47
+|Romeo's Exile| 52
+|Johnny Winter's first song| 59
+|Born and Raised In Compton| 60
+|What Are We Here For| 63
+|Movement 4 [from Kiss] (Album Version)| 65
+|The Girl From Ipanema (Garota De Ipanema)| 67
+|Long Lonesome Blues| 75
+|Juguete| 79
+|Oversleeping| 82
+|Hey Joe| 83
+|The Mystery Epoch| 84
+|11th Street| 86
+|Six| 87
+|Doesn't Get Much Better| 90
+|Sporco Ma Distinto| 94
+|Down in the Lowlands| 101
+|Decide| 104
+|Well Oh Well| 110
+|Johnny Winter's fifth song| 111
+|Be Careful With A Fool| 113
+|Black Tiger| 116
+|Johnny Winter's third song| 121
+|All The Answers| 123
+|For Your Passion My Love| 126
+|Function Of The Sun| 129
+|Wicker Chair| 132
+|Bukka White's second song| 137
+|I Think My Wife Is Running Around On Me (Taco Hell)| 141
+|Mississippi Boweavil Blues| 142
+|Sarah Yellin'| 143
+|She Blinded Me With Science| 144
+|Sympathy| 149
+|American Lovebite| 152
+|Don't Keep Me Wondering| 153
+|Bukka White's third song| 155
+|Bukka White's fourth song| 156
+|Johnny Winter's fourth song| 157
+|Your Revolution Is A Joke| 159
+total songs: 57
+(81,2) -> (98,1) -> (446,1) -> (779,1) -> (955,12) -> (976,13) -> (1103,11) -> (1164,4) -> (1194,13) -> (1641,8) -> (1708,6) -> (1811,2) -> (2140,31) -> (2226,14)
+Memory pool expanded to be 2272 bytes.
+Memory pool expanded to be 2304 bytes.
+Memory pool expanded to be 2336 bytes.
+Memory pool expanded to be 2368 bytes.
+Memory pool expanded to be 2400 bytes.
+|Kill the Poor| is removed from the song database.
+|The Never-Ending Why| is removed from the song database.
+|Over The Hill| is removed from the song database.
+|Drop Sacrifice| is removed from the song database.
+|Sylver| does not exist in the song database.
+|Drop Sacrifice| does not exist in the song database.
+|Drop Sacrifice| does not exist in the song database.
+|Drop Sacrifice| does not exist in the song database.
+|The Girl From Ipanema (Garota De Ipanema)| is removed from the song database.
+|Happy Mondays| 2
+|Faithless| 5
+|R.L. Burnside| 6
+|Buddy Miles| 7
+|Funeral For A Friend| 8
+|Sleepy John Estes| 10
+|Liquid Stranger| 16
+|Barenaked Ladies| 24
+|Cheo Feliciano| 26
+|Tim Wilson| 27
+|Another Johnny Winter| 28
+|Michael Gettel| 30
+|Rita Chiarelli| 31
+|Akon| 33
+|Dave Eggar| 37
+|Novaspace| 38
+|Audio Adrenaline| 46
+|8Ball & MJG| 49
+|Dream Warriors| 53
+|Chris Clark| 56
+|Mr. Lif| 57
+|Liam O'Flynn| 60
+|Silverstein| 61
+|Jean Corti| 62
+|Thomas Dolby| 68
+|Kings Of Leon| 76
+|Kyle Riabko| 77
+|Paula Santoro| 78
+|Tiny Bradshaw| 79
+|Blind Lemon Jefferson| 80
+|Open Hand| 83
+|All Time Low| 85
+|John Cale| 88
+|DJ Quik| 89
+|Gary Moore| 90
+|Esperanza Spalding / Leo Genovese| 91
+|No Address| 101
+|3 Doors Down| 102
+|Dead Kennedys| 105
+|Aeoliah| 106
+|Gerard Lenorman| 107
+|themselves| 108
+|Green Day| 110
+|Johnny Winter| 115
+|Another Bukka White| 117
+|Chelsea| 118
+|Sylver| 120
+|Y&T| 121
+|The Ruby Suns| 122
+|David Arkenstone| 135
+|Hot Chip| 139
+|Charlie Peacock| 142
+|Ennio Morricone| 149
+|Placebo| 150
+total artists: 54
+|For You| 0
+|Johnny Winter's second song| 3
+|Street Car Blues| 5
+|Sound Clash (featuring Beenie Man) - FattaSly Extended Mix| 9
+|Wake Me Up When September Ends (Live at Foxboro_ MA 9/3/05)| 12
+|No| 14
+|My God (Audio Adrenaline Album Version)| 19
+|Wrote For Luck (12 - Remastered version)| 20
+|If That's True| 25
+|Doggin' Around| 28
+|Pimpin' Don't Fail Me Now [Featuring Jazze Pha and Juvenile] (Explicit Album Version)| 29
+|Dancing With Tears In My Eyes 2004 (Nova Mix (Club Version))| 30
+|Pretty Girl (Amended Version)| 31
+|Safe Passage| 38
+|If You Should Walk Away| 39
+|Deep Blue| 41
+|Soldats Ne Tirez Pas| 43
+|Shameless| 44
+|Escape From The Underrealm| 46
+|This Is Where It Ends (Album Version)| 47
+|Romeo's Exile| 52
+|Johnny Winter's first song| 59
+|Born and Raised In Compton| 60
+|What Are We Here For| 63
+|Movement 4 [from Kiss] (Album Version)| 65
+|Long Lonesome Blues| 75
+|Juguete| 79
+|Oversleeping| 82
+|Hey Joe| 83
+|The Mystery Epoch| 84
+|11th Street| 86
+|Six| 87
+|Doesn't Get Much Better| 90
+|Sporco Ma Distinto| 94
+|Down in the Lowlands| 101
+|Decide| 104
+|Well Oh Well| 110
+|Johnny Winter's fifth song| 111
+|Be Careful With A Fool| 113
+|Always And Never (Album Version)| 114
+|Black Tiger| 116
+|Johnny Winter's third song| 121
+|All The Answers| 123
+|For Your Passion My Love| 126
+|Function Of The Sun| 129
+|Wicker Chair| 132
+|The Forgotten Lands| 133
+|Bukka White's second song| 137
+|I Think My Wife Is Running Around On Me (Taco Hell)| 141
+|Mississippi Boweavil Blues| 142
+|Sarah Yellin'| 143
+|She Blinded Me With Science| 144
+|Sympathy| 149
+|American Lovebite| 152
+|Don't Keep Me Wondering| 153
+|Bukka White's third song| 155
+|Bukka White's fourth song| 156
+|Johnny Winter's fourth song| 157
+|Your Revolution Is A Joke| 159
+total songs: 59
+(81,2) -> (98,1) -> (446,1) -> (779,1) -> (964,3) -> (1112,2) -> (1164,4) -> (1598,43) -> (1708,6) -> (1811,2) -> (2158,13) -> (2296,37) -> (2348,15) -> (2380,20)
+Memory pool expanded to be 2432 bytes.
+Memory pool expanded to be 2464 bytes.
+Memory pool expanded to be 2496 bytes.
+Memory pool expanded to be 2528 bytes.
+Memory pool expanded to be 2560 bytes.
+Memory pool expanded to be 2592 bytes.
+Memory pool expanded to be 2624 bytes.
+Memory pool expanded to be 2656 bytes.
+Memory pool expanded to be 2688 bytes.
+Memory pool expanded to be 2720 bytes.
+Memory pool expanded to be 2752 bytes.
+Memory pool expanded to be 2784 bytes.
+Memory pool expanded to be 2816 bytes.
+|Jean Corti| is removed from the artist database.
+|Jean Corti| does not exist in the artist database.
+|Richard Galliano| does not exist in the artist database.
+|Movement 4 [from Kiss] (Album Version)| is removed from the song database.
+|If That's True| is removed from the song database.
+Memory pool expanded to be 2848 bytes.
+|kkkkk| does not exist in the song database.
+|kkkkk| does not exist in the song database.
+|kkkkk| does not exist in the song database.
+|Strange Way To Save The World| is removed from the song database.
+Memory pool expanded to be 2880 bytes.
+Memory pool expanded to be 2912 bytes.
+Memory pool expanded to be 2944 bytes.
+Memory pool expanded to be 2976 bytes.
+song hash table size doubled.
+Memory pool expanded to be 3008 bytes.
+Memory pool expanded to be 3040 bytes.
+Memory pool expanded to be 3072 bytes.
+|Love Jones| is removed from the artist database.
+|The Motors| is removed from the artist database.
+|Hidden Documents| is removed from the song database.
+|Dancing The Night Away| is removed from the song database.
+|Sergio Mendes / Black Eyed Peas| is removed from the artist database.
+|Dokken| is removed from the artist database.
+|Liam O'Flynn| is removed from the artist database.
+|Teenage Fanclub| is removed from the artist database.
+Memory pool expanded to be 3104 bytes.
+Memory pool expanded to be 3136 bytes.
+Memory pool expanded to be 3168 bytes.
+artist hash table size doubled.
+Memory pool expanded to be 3200 bytes.
+Memory pool expanded to be 3232 bytes.
+Memory pool expanded to be 3264 bytes.
+Memory pool expanded to be 3296 bytes.
+Memory pool expanded to be 3328 bytes.
+Memory pool expanded to be 3360 bytes.
+Memory pool expanded to be 3392 bytes.
+Memory pool expanded to be 3424 bytes.
+Memory pool expanded to be 3456 bytes.
+Memory pool expanded to be 3488 bytes.
+Memory pool expanded to be 3520 bytes.
+Memory pool expanded to be 3552 bytes.
+Memory pool expanded to be 3584 bytes.
+Memory pool expanded to be 3616 bytes.
+Memory pool expanded to be 3648 bytes.
+Memory pool expanded to be 3680 bytes.
+Memory pool expanded to be 3712 bytes.
+Memory pool expanded to be 3744 bytes.
+Memory pool expanded to be 3776 bytes.
+Memory pool expanded to be 3808 bytes.
+Memory pool expanded to be 3840 bytes.
+Memory pool expanded to be 3872 bytes.
+Memory pool expanded to be 3904 bytes.
+Memory pool expanded to be 3936 bytes.
+Memory pool expanded to be 3968 bytes.
+Memory pool expanded to be 4000 bytes.
+Memory pool expanded to be 4032 bytes.
+Memory pool expanded to be 4064 bytes.
+Memory pool expanded to be 4096 bytes.
+Memory pool expanded to be 4128 bytes.
+Memory pool expanded to be 4160 bytes.
+Memory pool expanded to be 4192 bytes.
+Memory pool expanded to be 4224 bytes.
+Memory pool expanded to be 4256 bytes.
+Memory pool expanded to be 4288 bytes.
+Memory pool expanded to be 4320 bytes.
+Memory pool expanded to be 4352 bytes.
+Memory pool expanded to be 4384 bytes.
+Memory pool expanded to be 4416 bytes.
+Memory pool expanded to be 4448 bytes.
+Memory pool expanded to be 4480 bytes.
+Memory pool expanded to be 4512 bytes.
+Memory pool expanded to be 4544 bytes.
+Memory pool expanded to be 4576 bytes.
+Memory pool expanded to be 4608 bytes.
+Memory pool expanded to be 4640 bytes.
+Memory pool expanded to be 4672 bytes.
+Memory pool expanded to be 4704 bytes.
+Memory pool expanded to be 4736 bytes.
+Memory pool expanded to be 4768 bytes.
+Memory pool expanded to be 4800 bytes.
+Memory pool expanded to be 4832 bytes.
+Memory pool expanded to be 4864 bytes.
+Memory pool expanded to be 4896 bytes.
+Memory pool expanded to be 4928 bytes.
+Memory pool expanded to be 4960 bytes.
+Memory pool expanded to be 4992 bytes.
+Memory pool expanded to be 5024 bytes.
+Memory pool expanded to be 5056 bytes.
+Memory pool expanded to be 5088 bytes.
+Memory pool expanded to be 5120 bytes.
+Memory pool expanded to be 5152 bytes.
+Memory pool expanded to be 5184 bytes.
+Memory pool expanded to be 5216 bytes.
+Memory pool expanded to be 5248 bytes.
+Memory pool expanded to be 5280 bytes.
+Memory pool expanded to be 5312 bytes.
+Memory pool expanded to be 5344 bytes.
+Memory pool expanded to be 5376 bytes.
+Memory pool expanded to be 5408 bytes.
+Memory pool expanded to be 5440 bytes.
+Memory pool expanded to be 5472 bytes.
+Memory pool expanded to be 5504 bytes.
+Memory pool expanded to be 5536 bytes.
+Memory pool expanded to be 5568 bytes.
+Memory pool expanded to be 5600 bytes.
+Memory pool expanded to be 5632 bytes.
+Memory pool expanded to be 5664 bytes.
+Memory pool expanded to be 5696 bytes.
+song hash table size doubled.
+Memory pool expanded to be 5728 bytes.
+Memory pool expanded to be 5760 bytes.
+Memory pool expanded to be 5792 bytes.
+Memory pool expanded to be 5824 bytes.
+Memory pool expanded to be 5856 bytes.
+Memory pool expanded to be 5888 bytes.
+Memory pool expanded to be 5920 bytes.
+Memory pool expanded to be 5952 bytes.
+Memory pool expanded to be 5984 bytes.
+Memory pool expanded to be 6016 bytes.
+artist hash table size doubled.
+Memory pool expanded to be 6048 bytes.
+Memory pool expanded to be 6080 bytes.
+Memory pool expanded to be 6112 bytes.
+Memory pool expanded to be 6144 bytes.
+Memory pool expanded to be 6176 bytes.
+Memory pool expanded to be 6208 bytes.
+Memory pool expanded to be 6240 bytes.
+Memory pool expanded to be 6272 bytes.
+Memory pool expanded to be 6304 bytes.
+Memory pool expanded to be 6336 bytes.
+Memory pool expanded to be 6368 bytes.
+Memory pool expanded to be 6400 bytes.
+Memory pool expanded to be 6432 bytes.
+Memory pool expanded to be 6464 bytes.
+Memory pool expanded to be 6496 bytes.
+Memory pool expanded to be 6528 bytes.
+Memory pool expanded to be 6560 bytes.
+Memory pool expanded to be 6592 bytes.
+Memory pool expanded to be 6624 bytes.
+Memory pool expanded to be 6656 bytes.
+Memory pool expanded to be 6688 bytes.
+Memory pool expanded to be 6720 bytes.
+Memory pool expanded to be 6752 bytes.
+Memory pool expanded to be 6784 bytes.
+Memory pool expanded to be 6816 bytes.
+Memory pool expanded to be 6848 bytes.
+Memory pool expanded to be 6880 bytes.
+Memory pool expanded to be 6912 bytes.
+Memory pool expanded to be 6944 bytes.
+Memory pool expanded to be 6976 bytes.
+Memory pool expanded to be 7008 bytes.
+Memory pool expanded to be 7040 bytes.
+Memory pool expanded to be 7072 bytes.
+Memory pool expanded to be 7104 bytes.
+Memory pool expanded to be 7136 bytes.
+Memory pool expanded to be 7168 bytes.
+Memory pool expanded to be 7200 bytes.
+Memory pool expanded to be 7232 bytes.
+Memory pool expanded to be 7264 bytes.
+Memory pool expanded to be 7296 bytes.
+Memory pool expanded to be 7328 bytes.
+Memory pool expanded to be 7360 bytes.
+Memory pool expanded to be 7392 bytes.
+Memory pool expanded to be 7424 bytes.
+Memory pool expanded to be 7456 bytes.
+Memory pool expanded to be 7488 bytes.
+Memory pool expanded to be 7520 bytes.
+Memory pool expanded to be 7552 bytes.
+Memory pool expanded to be 7584 bytes.
+Memory pool expanded to be 7616 bytes.
+Memory pool expanded to be 7648 bytes.
+Memory pool expanded to be 7680 bytes.
+Memory pool expanded to be 7712 bytes.
+Memory pool expanded to be 7744 bytes.
+Memory pool expanded to be 7776 bytes.
+Memory pool expanded to be 7808 bytes.
+Memory pool expanded to be 7840 bytes.
+Memory pool expanded to be 7872 bytes.
+Memory pool expanded to be 7904 bytes.
+Memory pool expanded to be 7936 bytes.
+Memory pool expanded to be 7968 bytes.
+Memory pool expanded to be 8000 bytes.
+Memory pool expanded to be 8032 bytes.
+Memory pool expanded to be 8064 bytes.
+Memory pool expanded to be 8096 bytes.
+Memory pool expanded to be 8128 bytes.
+Memory pool expanded to be 8160 bytes.
+Memory pool expanded to be 8192 bytes.
+Memory pool expanded to be 8224 bytes.
+Memory pool expanded to be 8256 bytes.
+Memory pool expanded to be 8288 bytes.
+Memory pool expanded to be 8320 bytes.
+Memory pool expanded to be 8352 bytes.
+Memory pool expanded to be 8384 bytes.
+Memory pool expanded to be 8416 bytes.
+Memory pool expanded to be 8448 bytes.
+Memory pool expanded to be 8480 bytes.
+Memory pool expanded to be 8512 bytes.
+Memory pool expanded to be 8544 bytes.
+Memory pool expanded to be 8576 bytes.
+Memory pool expanded to be 8608 bytes.
+Memory pool expanded to be 8640 bytes.
+Memory pool expanded to be 8672 bytes.
+Memory pool expanded to be 8704 bytes.
+Memory pool expanded to be 8736 bytes.
+Memory pool expanded to be 8768 bytes.
+Memory pool expanded to be 8800 bytes.
+Memory pool expanded to be 8832 bytes.
+Memory pool expanded to be 8864 bytes.
+Memory pool expanded to be 8896 bytes.
+Memory pool expanded to be 8928 bytes.
+Memory pool expanded to be 8960 bytes.
+Memory pool expanded to be 8992 bytes.
+Memory pool expanded to be 9024 bytes.
+Memory pool expanded to be 9056 bytes.
+Memory pool expanded to be 9088 bytes.
+Memory pool expanded to be 9120 bytes.
+Memory pool expanded to be 9152 bytes.
+Memory pool expanded to be 9184 bytes.
+Memory pool expanded to be 9216 bytes.
+Memory pool expanded to be 9248 bytes.
+Memory pool expanded to be 9280 bytes.
+Memory pool expanded to be 9312 bytes.
+Memory pool expanded to be 9344 bytes.
+Memory pool expanded to be 9376 bytes.
+Memory pool expanded to be 9408 bytes.
+Memory pool expanded to be 9440 bytes.
+Memory pool expanded to be 9472 bytes.
+Memory pool expanded to be 9504 bytes.
+Memory pool expanded to be 9536 bytes.
+Memory pool expanded to be 9568 bytes.
+Memory pool expanded to be 9600 bytes.
+Memory pool expanded to be 9632 bytes.
+Memory pool expanded to be 9664 bytes.
+Memory pool expanded to be 9696 bytes.
+Memory pool expanded to be 9728 bytes.
+Memory pool expanded to be 9760 bytes.
+Memory pool expanded to be 9792 bytes.
+Memory pool expanded to be 9824 bytes.
+Memory pool expanded to be 9856 bytes.
+Memory pool expanded to be 9888 bytes.
+Memory pool expanded to be 9920 bytes.
+Memory pool expanded to be 9952 bytes.
+Memory pool expanded to be 9984 bytes.
+Memory pool expanded to be 10016 bytes.
+Memory pool expanded to be 10048 bytes.
+|99 Posse| is removed from the artist database.
+|A True| is removed from the song database.
+|themselves| is removed from the artist database.
+|Crayon Sharpener| is removed from the song database.
+(81,2) -> (98,1) -> (446,1) -> (779,1) -> (901,12) -> (964,3) -> (1112,2) -> (1811,2) -> (2023,1) -> (2139,1) -> (2168,3) -> (2330,3) -> (2362,1) -> (2406,2) -> (2733,3) -> (2953,1) -> (9738,8) -> (9764,18) -> (9949,10) -> (10023,25)
+|The Czar: Usurper/Escape/Martyr/Spiral (Album Version)| 0
+|Plastic People| 1
+|Gold Flames Of Angels| 4
+|Street Car Blues| 5
+|Anfang Vom Ende| 12
+|Ride Wit Me| 18
+|Wrote For Luck (12 - Remastered version)| 20
+|Makin' Believe| 22
+|The Painter| 24
+|Sound Clash| 25
+|Pottajenkka| 28
+|Dancing With Tears In My Eyes 2004 (Nova Mix (Club Version))| 30
+|Lookin' For Me Somewhere| 31
+|Something Girls| 32
+|Erick Sermon| 34
+|Baggage| 35
+|Disease| 37
+|Happy Safari| 39
+|Shameless| 43
+|Escape From The Underrealm| 46
+|Cerilene| 47
+|Down On Me| 49
+|Freak| 50
+|Wake Up! Wake Up! (Wake Up! Wake Up! Album Version)| 51
+|On Misty Pathways| 52
+|Be My Lover| 53
+|Party Time| 54
+|No Sympathy For Fools| 58
+|Ghetto| 59
+|Getaway| 62
+|Cry| 67
+|Undertow| 71
+|Sea_ Subsurface| 72
+|Six| 83
+|Prove Something (explicit album version)| 84
+|Contact 00| 85
+|Moss Garden (1999 Digital Remaster)| 87
+|Doesn't Get Much Better| 90
+|I'm On Your Tail| 91
+|Salario Garantito (Versione Strumentale)| 94
+|It's All In How You Look At It| 95
+|The One I Got| 96
+|Beauty And The Beast| 113
+|8th Wonder| 116
+|Heaven's In New York| 117
+|A Dustland Fairytale| 119
+|Better Days (Album Version)| 121
+|Comme Toi (Live)| 122
+|Matter Of Fact| 123
+|All On Our Own| 124
+|Come Dance With Me| 125
+|The World'll Be OK| 126
+|Function Of The Sun| 129
+|Let's Make Love (Album Version)| 138
+|I Think My Wife Is Running Around On Me (Taco Hell)| 141
+|Journey's End| 143
+|Why_ Now Baby?| 144
+|American Lovebite| 148
+|Like Dylan In The Movies| 150
+|Common sense| 151
+|Ripped Pants| 152
+|Up All Night (Acoustic Live Album Version)| 153
+|Jump In My Bed| 156
+|God You Are My God| 157
+|For You| 159
+|Your Revolution Is A Joke| 160
+|Murder One| 161
+|Immonumental| 165
+|Too Much Stuff| 167
+|Sound Clash (featuring Beenie Man) - FattaSly Extended Mix| 169
+|Al Final| 170
+|Five Long Years| 174
+|Valerie (LP Version)| 175
+|My God (Audio Adrenaline Album Version)| 179
+|Show a Sign of Life| 180
+|House Of Wolves (Album Version)| 181
+|Make That Money (Scrooge's Song) (Album Version)| 189
+|Summer Dying Fast| 197
+|Deep Blue| 201
+|Antes (Salsa Version)| 209
+|Ye That Tempteth_ Ye That Bequeth| 213
+|Let Me Show You The Way (Out)| 214
+|Come Alive| 217
+|Johnny Winter's first song| 219
+|Indian Love Call| 220
+|Into Battle| 221
+|Mama Kin| 237
+|Commercial Reign| 238
+|Around And Around| 243
+|Soc Mediterrani| 245
+|Bliv Du Till Gran (If You Became A Spruce)| 247
+|Sporco Ma Distinto| 254
+|Same Old Thing| 257
+|Old Friends| 259
+|Down in the Lowlands| 261
+|Die Meisten| 262
+|Give Your Heart a Home| 264
+|Boom-Shack-A-Lack (12 Mmix / Bonus Tra)| 268
+|Gotta Cut Out| 272
+|LEAVE!| 273
+|Black Tiger| 276
+|Can't Do Me No Good| 277
+|Reminisce For A While (Sung With Raul Malo)| 279
+|Bleeds In Blue (Album Version)| 280
+|So Not Over You (Motivo-Pop Lectro Mix)| 281
+|Reborn (Explicit)| 283
+|The Dark Road| 284
+|For Your Passion My Love| 286
+|The Lie| 288
+|Love Can Run Faster| 289
+|Honey Fingers| 290
+|Salvation| 291
+|Wicker Chair| 292
+|Chela| 293
+|Send Me An Angel| 294
+|Busted| 295
+|Frankie And Johnny| 298
+|These Words| 299
+|Can't Happen Here| 300
+|De rien| 301
+|My Babe| 302
+|Feelings| 303
+|Rescue Me| 304
+|Maria De Santiago| 305
+|Quiet Time| 306
+|Sympathy| 308
+|Patience| 309
+|Breakin' Dishes| 310
+|Please Send Me Someone To Love| 311
+|Kite Live from Sydney| 314
+|Redwing| 315
+|Waheera| 316
+|King Of Rock| 317
+|Got To Give It Up| 318
+|Two Track Dub (Dub / Instrumental Reggae Music)| 319
+|No One Hears You| 321
+|2.000 Kilometros| 322
+|Be| 323
+|Career Suicide (CD)| 324
+|Scientas| 325
+|How Ya Like Me Now| 326
+|Certain Things We Do| 328
+|No| 334
+|Harmony Of The Forest| 337
+|The Majesty Of Rock| 338
+|Party In The Stomach (LP Version)| 339
+|If I Know You| 341
+|Doggin' Around| 348
+|Misty Bog| 350
+|Safe Passage| 358
+|If You Should Walk Away| 359
+|13 jours en France| 361
+|C'Etait Bien| 362
+|This Is Where It Ends (Album Version)| 363
+|Mas Que Nada| 364
+|Romeo's Exile| 367
+|Leather Prowler| 368
+|Big Business| 370
+|22 Going On 23| 371
+|So ist das nun mal| 381
+|Every Other Way| 382
+|What Are We Here For| 383
+|Red Socks Pugie| 384
+|Black and Blue| 390
+|Not Buried Deep Enough| 391
+|Year 3_000 Blues (2002 Digital Remaster)| 392
+|Chime (edit)| 396
+|Any Wich Way (Freedom Must Come)| 397
+|Big Girl Blues| 398
+|Volumatic Spacer Device| 400
+|Hey Joe| 402
+|Living The Dream| 404
+|Cop It| 405
+|Heavy Like Sunday| 410
+|I'm Real| 411
+|Everything Man (Album Version)| 412
+|Oh It's You| 413
+|A Brief History of Shitty Comedy| 414
+|Woo Hoo| 415
+|Crazy Circles| 417
+|Sensations| 418
+|You Never Cry Like A Lover (LP Version)| 419
+|The Joes Mobilize| 421
+|Nonfiction| 422
+|Gallows (Album Version)| 423
+|Decide| 424
+|The Ride (Album)| 425
+|Freedom| 426
+|After Hours| 428
+|Damien| 429
+|Ammonite| 431
+|I Like Young Girls| 432
+|Be Careful With A Fool| 433
+|Listen| 434
+|The Unidentified Flying Object| 435
+|All The Answers| 443
+|Tonight| 444
+|Everyday| 446
+|Macarena| 447
+|Q Loop| 448
+|Spoonful| 449
+|Women| 453
+|Ma Rainey's Black Bottom| 456
+|Everyday I Have The Blues| 457
+|I'm Not A Loser| 459
+|Loko| 460
+|Good Friend| 461
+|Mississippi Boweavil Blues| 462
+|Sarah Yellin'| 463
+|Tic| 468
+|Short On Ideas / One Last Cigarette| 471
+|Don't Keep Me Wondering| 473
+|The Letter That Johnny Walker Read| 474
+|Bukka White's third song| 475
+|Johnny Winter's fourth song| 476
+|No Good Without You| 477
+|Johnny Winter's second song| 483
+|No More Doggin'| 490
+|Wake Me Up When September Ends (Live at Foxboro_ MA 9/3/05)| 492
+|Ich bleib so wie ich bin| 493
+|I Am Your Mother Too| 495
+|Mistadobalina| 496
+|Riot In Cell Block #9| 497
+|Sweet Lover Hangover| 500
+|Pimpin' Don't Fail Me Now [Featuring Jazze Pha and Juvenile] (Explicit Album Version)| 508
+|Pretty Girl (Amended Version)| 511
+|Walking The Back Streets And Crying| 516
+|Risen From Within| 518
+|Dying Batteries| 520
+|Tainted Love feat. Tatz| 521
+|Soldats Ne Tirez Pas| 523
+|Harboring An Apparition| 524
+|Pretty Woman (LP Version)| 527
+|Away In A Manger| 528
+|Attic Room| 531
+|Main Street Eyes| 535
+|Born and Raised In Compton| 540
+|My Prerogative| 541
+|Bigbigkiss| 542
+|Consume (LP Version)| 543
+|Burn 'Em Down (LP Version)| 544
+|Last Good Time In Town| 546
+|From The Ritz To The Rubble| 547
+|The Race| 550
+|They Have a Name| 551
+|Idnnitkhtr| 554
+|Long Lonesome Blues| 555
+|Angel| 557
+|Juguete| 559
+|Oversleeping| 562
+|The Mystery Epoch| 563
+|Sporable| 564
+|11th Street| 566
+|Printemps| 567
+|Trapdoor| 568
+|Manila| 569
+|Voodoo Punnany (Album Version)| 570
+|Micael| 571
+|It's All In My Mind| 575
+|Come Around (LP Version)| 576
+|De Onda| 578
+|I Love You More Than You'll Ever Know (LP Version)| 580
+|Down South Blues| 581
+|Nothing In Rambling| 586
+|Sweetest Goodbye| 587
+|Si Es Que Te Vas| 588
+|Inherent Scars| 589
+|Well Oh Well| 590
+|Johnny Winter's fifth song| 591
+|Yiri Yiri Bon| 592
+|Hard Times| 593
+|Always And Never (Album Version)| 594
+|Song Sung Blue| 595
+|When Morning Comes To Town| 596
+|Time / Confusion| 598
+|Same Game| 600
+|Johnny Winter's third song| 601
+|A Devil's Ransom (Album Version)| 602
+|I Versus I| 603
+|Good Enough| 604
+|Finding My Way| 605
+|Changed My Life| 608
+|River Is Waiting| 609
+|Shed So Many Tears| 610
+|The Forgotten Lands| 613
+|Get It Together| 615
+|La Route Est Belle| 616
+|Bukka White's second song| 617
+|With Tears In My Eyes| 618
+|No Unexpected Guests| 619
+|Talk To Your Daughter (Album Version)| 622
+|She Blinded Me With Science| 624
+|Caribou Lou| 625
+|To Sir With Love| 626
+|Bukka White's fourth song| 635
+|We've Only Just Begun (LP Version)| 637
+|Danny's All-Star Joint (LP Version)| 639
+total songs: 297
+|Jennifer Lopez featuring Ja Rule| 1
+|Young-Holt Unlimited| 3
+|V V Brown| 6
+|David Summers| 8
+|Jeremy Spencer| 12
+|Sonora Carruseles| 13
+|Human Disease| 14
+|Liquid Stranger| 16
+|Fat Joe| 17
+|Leona Naess| 18
+|Seventh Star| 20
+|Chroma Key| 21
+|Alice Cooper| 22
+|Symphony in Peril| 23
+|Robert Palmer| 24
+|Tim Wilson| 26
+|Talib Kweli| 27
+|Elakelaiset| 29
+|RUN-DMC| 31
+|Erick Sermon| 34
+|Unwritten Law| 35
+|Novaspace| 38
+|45 Grave| 39
+|The Gone Jackals| 42
+|Mikey Dread| 43
+|Behemoth| 47
+|Jonny Lang| 49
+|Sugar Minott| 51
+|Rainbow| 52
+|Wesley Tuttle| 58
+|Dave Brockie Experience| 59
+|Maroon 5| 60
+|Mithotyn| 61
+|Drowning Pool| 62
+|Oztara| 65
+|Everyday Sunday| 66
+|Orbital| 67
+|DMX| 68
+|The Rolling Stones| 71
+|Hem| 72
+|James Taylor Quartet| 73
+|Kings Of Leon| 76
+|Kyle Riabko| 77
+|Tiny Bradshaw| 79
+|John Cale| 80
+|Lara & Reyes| 81
+|Torcuato Mariano| 82
+|Open Hand| 83
+|Lightnin' Slim| 84
+|Faith Hill & Tim McGraw| 85
+|U2| 86
+|Bersuit Vergarabat| 88
+|Gary Moore| 89
+|Rance Allen Group| 90
+|L7| 92
+|One Block Radius| 96
+|3 Doors Down| 102
+|Teenage Fanclub| 103
+|Iggy Pop| 105
+|Bad Company| 106
+|Keb' Mo'| 107
+|Alexandre Desplat| 110
+|Red Stick Ramblers| 111
+|The Black Crowes| 112
+|Jimmy McCracklin| 113
+|Jim Breuer| 114
+|Britney Spears| 117
+|Phantom Planet| 121
+|High Strung_ The| 125
+|The Killers| 132
+|David Arkenstone| 135
+|The Paul Butterfield Blues Band| 136
+|Arturo Sandoval| 138
+|Hot Chip| 139
+|Seguridad Social| 140
+|Jah Cure| 141
+|The Cliks| 142
+|Ten Years After| 148
+|Ennio Morricone| 149
+|The Chap| 151
+|Ensiferum| 152
+|Bravehearts| 153
+|Descendents| 155
+|KALIMBA| 156
+|Faithless| 161
+|Happy Mondays| 162
+|BoDeans| 163
+|Leigh Jones| 166
+|Buddy Miles| 167
+|Funeral For A Friend| 168
+|Delirious| 169
+|Patton Oswalt| 170
+|Ma Rainey| 171
+|White Willow| 172
+|Janis Joplin| 173
+|James Horner| 175
+|Astarte| 179
+|TAKARU| 182
+|Shamen| 184
+|Cheo Feliciano| 186
+|Another Johnny Winter| 188
+|Winifred Phillips| 189
+|Pyranja| 190
+|Rita Chiarelli| 191
+|Swami| 192
+|Akon| 193
+|Stanley Clarke & George Duke| 195
+|Dave Eggar| 197
+|Lightnin' Hopkins| 202
+|MIMS| 205
+|Love Jones| 209
+|My Chemical Romance| 216
+|Neil Diamond| 219
+|Los Del Rio| 226
+|Four Tet| 230
+|Lost Boyz| 231
+|Samy Deluxe| 232
+|Casiotone For The Painfully Alone| 233
+|Jean-Jacques Goldman| 236
+|Toni Braxton| 237
+|Chase & Status| 240
+|The Sugarhill Gang| 243
+|Spongebob Squarepants| 244
+|Francis Lai| 245
+|Jackson United| 247
+|Perrey And Kingsley| 248
+|Esperanza Spalding / Leo Genovese| 251
+|Ricardo Lemvo| 255
+|Del Tha Funkee Homosapien| 257
+|Bad Azz| 259
+|Joe Rogan| 266
+|Gerard Lenorman| 267
+|Little Milton| 271
+|Les Ogres De Barback| 272
+|Johnny Winter| 275
+|Evanescence| 280
+|Sister Hazel| 281
+|Faith Hill| 282
+|Junior Reid| 286
+|David Bowie| 287
+|Primordial| 288
+|Sick Of It All| 296
+|Shy FX & T Power| 297
+|Eagles| 298
+|Helen Love| 300
+|Kitty Wells| 304
+|4Him| 308
+|Placebo| 309
+|Bury Your Dead| 310
+|Rooney| 311
+|Enslavement Of Beauty| 312
+|Atreyu| 314
+|Rihanna| 320
+|Bert Kaempfert| 321
+|Agnostic Front| 322
+|T-Bone| 323
+|Dons| 324
+|R.L. Burnside| 325
+|Less Than Jake| 326
+|BT feat. JES| 327
+|Winston McAnuff_ The Bazbaz Orchestra| 328
+|Mouth Of The Architect| 329
+|John Frizzell| 336
+|Natasha Bedingfield| 342
+|Belle and Sebastian| 343
+|Michael Gettel| 346
+|Phil Collins| 348
+|Otis Spann| 349
+|Andreas Dorau| 351
+|Paul Carrack| 354
+|Richard Galliano| 355
+|Bone Thugs-N-Harmony| 356
+|Memphis Minnie| 363
+|Stephen Pearcy| 366
+|8Ball & MJG| 369
+|Beastie Boys| 376
+|Natalie Cole| 381
+|Bikini Machine| 383
+|Cradle Of Filth| 385
+|The Presets| 393
+|The Plimsouls| 394
+|Paula Santoro| 398
+|Tilman Sillescu| 401
+|Arctic Monkeys| 402
+|Kelly Clarkson| 404
+|Spinal Tap| 405
+|Eko Fresh feat. Ado| 406
+|KRS-One| 410
+|Martin Denny| 411
+|Wyclef Jean| 417
+|No Address| 421
+|Robben Ford| 422
+|Aeoliah| 426
+|Guns N' Roses| 428
+|Green Day| 430
+|Danny Barnes| 431
+|Butthole Surfers| 432
+|Plump DJs| 435
+|Another Bukka White| 437
+|Chelsea| 438
+|D:Fuse| 439
+|Sylver| 440
+|The Ruby Suns| 441
+|Foals| 442
+|Fontella Bass| 446
+|Liars| 447
+|Manjul| 450
+|Alan Silvestri| 457
+|Commander Cody And His Lost Planet Airmen| 460
+|Obie Bermudez| 470
+|Irma Thomas| 471
+|Gene Autry| 473
+|Don Francisco| 476
+|Asleep At The Wheel| 484
+|Sleepy John Estes| 490
+|Dilated Peoples| 500
+|Freddie King| 501
+|Love and Rockets| 503
+|Barenaked Ladies| 504
+|Baby Bash / Grimm| 510
+|The Birds| 521
+|Kool Moe Dee| 523
+|Audio Adrenaline| 526
+|Rickie Lee Jones| 527
+|Albert Collins| 528
+|Aisha Duo| 529
+|Donny Hathaway| 530
+|Dream Warriors| 533
+|The Token| 534
+|Chris Clark| 535
+|Juana Molina| 536
+|Mr. Lif| 537
+|Carlos Vives| 539
+|Aerosmith| 540
+|Silverstein| 541
+|Thomas Dolby| 548
+|Regina Belle| 549
+|Cinder| 552
+|Arthur Brown| 553
+|Nightwish| 554
+|Kassav'| 556
+|Simply Red| 557
+|Helmet| 558
+|Percy Mayfield| 559
+|Blind Lemon Jefferson| 560
+|All Time Low| 565
+|Groupa| 567
+|DJ Quik| 569
+|Super Cat| 570
+|Zeromancer| 572
+|Kitaro| 573
+|Mastodon| 576
+|Inspiral Carpets| 578
+|Dead Kennedys| 581
+|FFH| 582
+|Home Town Hero| 584
+|Big Jay Oakerson| 589
+|NG3| 590
+|Flowin Immo et Les Freaqz| 594
+|Y&T| 601
+|Tech N9ne| 602
+|Adam Ant| 609
+|The Field Mice| 610
+|Slim Whitman| 615
+|Simon & Garfunkel| 617
+|Lady Saw| 620
+|Charlie Peacock| 622
+|Basic Channel| 626
+|Jessica Simpson| 633
+|Bad Religion| 635
+total artists: 270

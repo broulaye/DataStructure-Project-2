@@ -39,7 +39,7 @@ public class SearchTree {
         int blockSize;
         String inputfileName;
         if (args == null || args.length != 3) {
-            System.out.println("Usage: Memman {initial-hash-size} "
+            System.out.println("Usage: SearchTree {initial-hash-size} "
                     + "{block-size} {command-file}");
             return;
         }
