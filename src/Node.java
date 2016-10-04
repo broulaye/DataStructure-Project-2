@@ -7,4 +7,7 @@ public class Node<key extends Comparable<? super key>> {
     public boolean isEqual(Node<?> aNode) {
         return this.equals(aNode);
     }
+    public String toString() {
+        return "";
+    }
 }

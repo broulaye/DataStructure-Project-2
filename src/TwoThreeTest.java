@@ -1,4 +1,4 @@
-import student.TestCase;
+import junit.framework.TestCase;
 /**
  * @author: Cheick Berthe
  * @author Broulaye Doumbia
@@ -19,9 +19,12 @@ public class TwoThreeTest extends TestCase
         KVPair pair1 = new KVPair(new Handle(13), new Handle(20));
         KVPair pair2 = new KVPair(new Handle(11), new Handle(27));
         KVPair pair3 = new KVPair(new Handle(1), new Handle(5));
+        KVPair pair4 = new KVPair(new Handle(8), new Handle(9));
         tree.add(pair1);
         tree.add(pair2);
         tree.add(pair3);
+        //tree.add(pair4);
+        System.out.println(tree.print());
     }
     public void testInsertLeft(){
 

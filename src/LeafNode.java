@@ -11,8 +11,15 @@ public class LeafNode<KVPair extends Comparable<? super KVPair>> extends Node<KV
     private KVPair rightKey; //right key
     private LeafNode<KVPair> next;
     private LeafNode<KVPair> previous;
-    
-    
+
+    /**
+     * Copy constructor
+     * @param root node to be copied
+     */
+    public LeafNode(LeafNode<KVPair> root) {
+        leftKey = root.getLeftKey();
+        rightKey = root.getRightKey();
+    }
     
     public LeafNode<KVPair> getNext() {
         return next;
@@ -39,7 +46,7 @@ public class LeafNode<KVPair extends Comparable<? super KVPair>> extends Node<KV
     
     @Override
     public boolean isFull() {
-        return leftKey == null && rightKey == null;
+        return leftKey != null && rightKey != null;
     }
     
     public LeafNode(KVPair leftKey, KVPair rightKey) {
@@ -78,12 +85,14 @@ public class LeafNode<KVPair extends Comparable<? super KVPair>> extends Node<KV
         return newNode.leftKey.compareTo(this.leftKey) == 0 && newNode.rightKey.compareTo(this.rightKey) == 0;
     }
 
+    @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
         if(this.getLeftKey() != null) {
             builder.append(this.getLeftKey().toString());
         }
         if(this.getRightKey() != null) {
+
             builder.append(this.getRightKey().toString());
         }
         return builder.toString();

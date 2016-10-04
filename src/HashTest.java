@@ -1,4 +1,4 @@
-import student.TestCase;
+import junit.framework.TestCase;
 
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
