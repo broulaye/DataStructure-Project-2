@@ -10,7 +10,7 @@ total artists: 1
 Memory pool expanded to be 96 bytes.
 (83,13)
 Printing 2-3 tree:
-0 2344 57
+0 2357 44
 Memory pool expanded to be 128 bytes.
 |Charley Patton| is removed from the artist database.
 Memory pool expanded to be 160 bytes.
@@ -21,7 +21,7 @@ song hash table size doubled.
 Memory pool expanded to be 256 bytes.
 Memory pool expanded to be 288 bytes.
 Printing 2-3 tree:
-0 2383 57
+0 2357 83
 |Bukka White| is removed from the artist database.
 |Blind Lemon Jefferson| 0
 |Sleepy John Estes| 1
@@ -64,26 +64,26 @@ total artists: 4
 |Bukka White's fourth song| 19
 total songs: 7
 Printing 2-3 tree:
-0 23265 44
+0 2344 265
 Memory pool expanded to be 320 bytes.
 Memory pool expanded to be 352 bytes.
 Printing 2-3 tree:
-0 23265 288
+0 23288 265
 Memory pool expanded to be 384 bytes.
 Printing 2-3 tree:
-0 23265 345
+0 23345 265
 song hash table size doubled.
 Memory pool expanded to be 416 bytes.
 |Bukka White| does not exist in the artist database.
 Printing 2-3 tree:
-0 23265 374
+0 23374 265
 artist hash table size doubled.
 Memory pool expanded to be 448 bytes.
 Memory pool expanded to be 480 bytes.
 Memory pool expanded to be 512 bytes.
 Memory pool expanded to be 544 bytes.
 Printing 2-3 tree:
-0 2383 492
+0 23492 83
 Memory pool expanded to be 576 bytes.
 Memory pool expanded to be 608 bytes.
 artist hash table size doubled.

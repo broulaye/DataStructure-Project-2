@@ -187,12 +187,14 @@ public class Processor {
         // First, insert the strings to their respective databases
         Handle artistHandle = artistHashTable.insertString(artist, writer);
         Handle songHandle = songHashTable.insertString(song, writer);
+        // then create and insert KVPair with artist as key and song as value
+        KVPair artistAsKey = new KVPair(artistHandle, songHandle);
+        //TODO: make the function below ("add") return a boolean
+        theTree.add(artistAsKey);
         // create then insert KVPair with song as key and artist value
         KVPair songAsKey = new KVPair(songHandle, artistHandle);
         theTree.add(songAsKey);
-        // then create and insert KVPair with artist as key and song as value
-        KVPair artistAsKey = new KVPair(artistHandle, songHandle);
-        theTree.add(artistAsKey);
+
 
     }
 
