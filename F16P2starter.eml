@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component inheritJdk="true">
-	<exclude-output/>
 	<contentEntry url="file://$MODULE_DIR$"/>
 	<lib name="student.jar" scope="COMPILE">
-		<relative-module-cls project-related="jar://$PROJECT_DIR$/Documents/Workspace/F16P2starter/lib/student.jar!/"/>
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/student.jar!/"/>
 	</lib>
 </component>

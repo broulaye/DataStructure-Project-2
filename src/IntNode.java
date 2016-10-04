@@ -4,7 +4,7 @@
  *
  * @param <KVPair>
  */
-public class IntNode<KVPair extends Comparable<? super KVPair>> extends Node{
+public class IntNode<KVPair extends Comparable<? super KVPair>> extends Node<KVPair>{
     //each Internal Node has three pointers and two values
     private KVPair leftKey; //left key
     private KVPair rightKey; //right key
