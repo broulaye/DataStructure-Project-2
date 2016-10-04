@@ -1,4 +1,4 @@
-import student.TestCase;
+import junit.framework.TestCase;
 
 /**
  * Test the KVPair class.

@@ -1,7 +1,9 @@
+import junit.framework.TestCase;
+
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
-import student.TestCase;
+
 
 /**
  * @author Broulaye Doumbia

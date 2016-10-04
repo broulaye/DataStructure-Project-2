@@ -11,6 +11,9 @@ public class TwoThree {
             root = temp1;
             return;
         }
+
+
+
         /**
          * check type of returned node
          * if returned node is a leaf node
@@ -33,6 +36,28 @@ public class TwoThree {
                 // reset root pointer
                 root = newNode;
             }
+        }
+        else {
+            LeafNode<KVPair> temp2 = (LeafNode<KVPair>) temp1;
+            if(!temp2.isEqual(root)) {
+                IntNode<KVPair> newNode;
+                if(temp2.isFull()) { //right split
+                    newNode = new IntNode<KVPair>(temp2.getLeftKey(), null);
+                    newNode.setMiddle(temp2);
+                    // copy root
+                    newNode.setLeft(new LeafNode<KVPair>((LeafNode<KVPair>) root));
+                    //newNode.setLeftKey(temp2.getLeftKey());
+                }
+                else{   // left split
+                    newNode = new IntNode<>(((LeafNode<KVPair>) root).getLeftKey(), null);
+                    newNode.setMiddle(new LeafNode<KVPair>((LeafNode<KVPair>) root));
+                    newNode.setLeft(temp2);
+                    newNode.setLeftKey(((LeafNode<KVPair>) root).getLeftKey());
+                }
+                // reset root pointer
+                root = newNode;
+            }
+
         }
 
     }
@@ -126,7 +151,10 @@ public class TwoThree {
         newLeaf.setNext(((LeafNode<KVPair>) root).getNext());
         ((LeafNode<KVPair>) root).setNext(newLeaf);
         newLeaf.setPrevious(((LeafNode<KVPair>) root));
-        newLeaf.getNext().setPrevious(newLeaf);
+        if(newLeaf.getNext() != null) {
+            newLeaf.getNext().setPrevious(newLeaf);
+        }
+
 
         LeafNode<KVPair> rootNode = (LeafNode<KVPair>) root;
 
@@ -383,24 +411,21 @@ public class TwoThree {
             return builder.toString();
         }
         for (int it = 0; it < depth; it++){
-            builder.append('\t');
+            builder.append("  ");
         }
+
+        builder.append(node.toString());
         // if root is an internal node
-        if (root instanceof IntNode){
+        if (node instanceof IntNode){
             // print the two KVPair followed by a newline
-            builder.append(((IntNode) root).getLeftKey().toString());
-            builder.append(((IntNode) root).getRightKey().toString());
             builder.append('\n');
             // print subtress in preorder
-            builder.append(print(((IntNode) root).getLeft(), depth + 1));
-            builder.append(print(((IntNode) root).getMiddle(), depth + 1));
-            builder.append(print(((IntNode) root).getRight(), depth + 1));
+            depth++;
+            builder.append(print(((IntNode) node).getLeft(), depth));
+            builder.append(print(((IntNode) node).getMiddle(), depth));
+            builder.append(print(((IntNode) node).getRight(), depth));
         }
-        else{
-            // if root is a leaf node
-            builder.append(((LeafNode) root).getLeftKey().toString());
-            builder.append(((LeafNode)root).getRightKey().toString());
-        }
+
         return builder.toString();
     }
 

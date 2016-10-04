@@ -16,6 +16,16 @@ public class IntNode<KVPair extends Comparable<? super KVPair>> extends Node{
         middle = null;
         right = null;
         left = null;
+        rightKey = null;
+        leftKey = null;
+    }
+
+    public  IntNode(KVPair neftKey, KVPair nrightKey) {
+        leftKey = neftKey;
+        rightKey = nrightKey;
+        middle = null;
+        right = null;
+        left = null;
     }
 
     /**
@@ -32,7 +42,7 @@ public class IntNode<KVPair extends Comparable<? super KVPair>> extends Node{
 
     @Override
     public boolean isFull() {
-        return leftKey == null && rightKey == null;
+        return leftKey != null && rightKey != null;
     }
     
     public KVPair getLeftKey() {
@@ -80,16 +90,15 @@ public class IntNode<KVPair extends Comparable<? super KVPair>> extends Node{
         IntNode newNode = (IntNode) node;
         return newNode.leftKey.compareTo(this.leftKey) == 0 && newNode.rightKey.compareTo(this.rightKey) == 0;
     }
+    @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
         if(getLeftKey() != null) {
             builder.append(this.getLeft().toString());
-            if(getMiddle() != null) {
-                builder.append(this.getMiddle().toString());
-                if(getRight() != null) {
-                    builder.append(this.getRight().toString());
-                }
-            }
+        }
+        if(this.getRightKey() != null) {
+
+            builder.append(this.getRightKey().toString());
         }
         return builder.toString();
     }
