@@ -74,7 +74,8 @@ public class TwoThree {
     private Node<KVPair> add(Node<KVPair> root, KVPair value) {
         // base case
         if (root == null) {
-            return new LeafNode<KVPair>(value, null);
+            root = new LeafNode<KVPair>(value, null);
+            return root;
         } // check if it's node
         else if (root instanceof LeafNode) {
             LeafNode<KVPair> node = (LeafNode<KVPair>) root;
@@ -108,6 +109,9 @@ public class TwoThree {
                 temp = add(node.getLeft(), value);
                 // root = add(value, ((IntNode<KVPair>) root).getLeft());
 
+                if(node.getLeft() == null) {
+                    node.setLeft(temp);
+                }
                 // if the leaf child has been split, perform a split
                 if (!temp.isEqual(node.getLeft())) {
                     return splitIntLeft(node, temp);
@@ -120,6 +124,9 @@ public class TwoThree {
             else if (compare >= 0) {
                 if (!node.isFull()) {
                     temp = add(node.getMiddle(), value);
+                    if(node.getMiddle() == null) {
+                        node.setMiddle(temp);
+                    }
                     if (!temp.isEqual(node.getMiddle())) {
                         return splitIntMiddle(node, temp);
                     }
@@ -131,6 +138,9 @@ public class TwoThree {
                 if (compare >= 0) {
                     temp = add(node.getRight(), value);
                     // root = add(value, node.getRight());
+                    if(node.getRight() == null) {
+                        node.setRight(temp);
+                    }
                     if (!temp.isEqual(node.getRight())) {
                         return splitIntRight(node, temp);
                     }
@@ -139,6 +149,9 @@ public class TwoThree {
                 // The value go in the middle
                 else if (compare < 0) {
                     temp = add(node.getMiddle(), value);
+                    if(node.getMiddle() == null) {
+                        node.setMiddle(temp);
+                    }
                     // root = add(value, node.getMiddle());
                     if (!temp.isEqual(node.getMiddle())) {
                         return splitIntMiddle(node, temp);

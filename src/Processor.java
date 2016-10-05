@@ -200,9 +200,12 @@ public class Processor {
         // then create and insert KVPair with artist as key and song as value
         KVPair artistAsKey = new KVPair(artistHandle, songHandle);
         // TODO: make the function below ("add") return a boolean
+        System.out.println("tree.add(new KVPair(new Handle(" + artistHandle +"), new Handle(" + songHandle + ")));");
         theTree.add(artistAsKey);
         // create then insert KVPair with song as key and artist value
         KVPair songAsKey = new KVPair(songHandle, artistHandle);
+        //System.out.println(songAsKey);
+        System.out.println("tree.add(new KVPair(new Handle(" + songHandle +"), new Handle(" + artistHandle + ")));");
         theTree.add(songAsKey);
 
     }

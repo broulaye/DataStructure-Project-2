@@ -27,6 +27,7 @@ public class KVPair implements Comparable<KVPair> {
        * @return the usual for a comparable (+, 0, -)
        */
     public int compareTo(KVPair it) {
+
         int compKey = theKey.compareTo(it.key());
         return compKey == 0 ? theVal.compareTo(it.value()) : compKey;
     }
