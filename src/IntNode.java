@@ -2,14 +2,10 @@
  * This class represent an Internal Node
  * 
  * @author Broulaye Doumbia
- *
- * @param <KVPair>
+ * @author Cheick Berthe
  */
-public class IntNode<KVPair extends Comparable<? super KVPair>>
-        extends Node<KVPair> {
-    // each Internal Node has three pointers and two values
-    private KVPair leftKey; // left key
-    private KVPair rightKey; // right key
+public class IntNode extends Node<KVPair> {
+
     private Node<KVPair> left; // left Node
     private Node<KVPair> right; // right Node
     private Node<KVPair> middle; // middle Node
@@ -22,23 +18,15 @@ public class IntNode<KVPair extends Comparable<? super KVPair>>
         leftKey = null;
     }
 
-    public IntNode(KVPair neftKey, KVPair nrightKey) {
-        leftKey = neftKey;
-        rightKey = nrightKey;
-        middle = null;
-        right = null;
-        left = null;
-    }
-
     /**
      * Copy constructor
      * 
      * @param root
      *            node to be copied
      */
-    public IntNode(IntNode<KVPair> root) {
+    public IntNode(IntNode root) {
         if (root == null) {
-            new IntNode<KVPair>();
+            new IntNode();
         }
         left = root.getLeft();
         right = root.getRight();
@@ -47,26 +35,14 @@ public class IntNode<KVPair extends Comparable<? super KVPair>>
         rightKey = root.getRightKey();
     }
 
-    @Override
-    public boolean isFull() {
-        return leftKey != null && rightKey != null;
+    public IntNode(KVPair key) {
+        leftKey = key;
+        rightKey = null;
+        right = null;
+        middle = null;
+        left = null;
     }
 
-    public KVPair getLeftKey() {
-        return leftKey;
-    }
-
-    public void setLeftKey(KVPair leftKey) {
-        this.leftKey = leftKey;
-    }
-
-    public KVPair getRightKey() {
-        return rightKey;
-    }
-
-    public void setRightKey(KVPair rightKey) {
-        this.rightKey = rightKey;
-    }
 
     public Node<KVPair> getLeft() {
         return left;
@@ -93,29 +69,7 @@ public class IntNode<KVPair extends Comparable<? super KVPair>>
     }
 
     @Override
-    public boolean isEqual(Node node) {
-        IntNode newNode = (IntNode) node;
-        Boolean result = false;
-        if (newNode.getLeftKey() != null && this.getLeftKey() != null) {
-            result = newNode.leftKey.compareTo(this.leftKey) == 0;
-            if (newNode.getRightKey() != null && this.getRightKey() != null) {
-                result = newNode.rightKey.compareTo(this.rightKey) == 0;
-                return result;
-            }
-        }
-        return result;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder builder = new StringBuilder();
-        if (getLeftKey() != null) {
-            builder.append(this.getLeftKey().toString());
-        }
-        if (this.getRightKey() != null) {
-            builder.append(" ");
-            builder.append(this.getRightKey().toString());
-        }
-        return builder.toString();
+    public boolean isLeaf(){
+        return false;
     }
 }

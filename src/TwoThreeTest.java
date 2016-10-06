@@ -11,14 +11,11 @@ public class TwoThreeTest extends TestCase
     public void setUp(){
         tree = new TwoThree();
     }
-    public void testInsertOnEmpty(){
-        KVPair pair = new KVPair(new Handle(10), new Handle(15));
-        tree.add(pair);
-    }
-    public void testInsertOnFull(){
-
-        tree.add(new KVPair(new Handle(0), new Handle(23)));
+    public void testInsert(){
         tree.add(new KVPair(new Handle(23), new Handle(0)));
+        tree.add(new KVPair(new Handle(0), new Handle(23)));
+        tree.add(new KVPair(new Handle(44), new Handle(2)));
+        tree.add(new KVPair(new Handle(57), new Handle(44)));
         tree.add(new KVPair(new Handle(0), new Handle(23)));
         tree.add(new KVPair(new Handle(23), new Handle(0)));
         tree.add(new KVPair(new Handle(44), new Handle(57)));
@@ -78,7 +75,6 @@ public class TwoThreeTest extends TestCase
         tree.add(new KVPair(new Handle(516), new Handle(531)));
         tree.add(new KVPair(new Handle(531), new Handle(516)));
         tree.add(new KVPair(new Handle(545), new Handle(560)));
-
         System.out.println(tree.print());
     }
     public void testInsertLeft(){

@@ -2,17 +2,13 @@
  * This class represent a leaf node
  * 
  * @author Broulaye Doumbia
+ * @author Cheick Berthe
  *
- * @param <KVPair>
  */
-public class LeafNode<KVPair extends Comparable<? super KVPair>>
-        extends Node<KVPair> {
+public class LeafNode extends Node<KVPair> {
 
-    // a leaf node has a left and right value
-    private KVPair leftKey; // left key
-    private KVPair rightKey; // right key
-    private LeafNode<KVPair> next;
-    private LeafNode<KVPair> previous;
+    private LeafNode next;
+    private LeafNode previous;
 
     /**
      * Copy constructor
@@ -20,27 +16,33 @@ public class LeafNode<KVPair extends Comparable<? super KVPair>>
      * @param root
      *            node to be copied
      */
-    public LeafNode(LeafNode<KVPair> root) {
+    public LeafNode(LeafNode root) {
         leftKey = root.getLeftKey();
         rightKey = root.getRightKey();
     }
 
-    public LeafNode<KVPair> getNext() {
+    public LeafNode getNext() {
         return next;
     }
 
-    public void setNext(LeafNode<KVPair> next) {
+    public void setNext(LeafNode next) {
         this.next = next;
     }
 
-    public LeafNode<KVPair> getPrevious() {
+    public LeafNode getPrevious() {
         return previous;
     }
 
-    public void setPrevious(LeafNode<KVPair> previous) {
+    public void setPrevious(LeafNode previous) {
         this.previous = previous;
     }
 
+    public LeafNode(KVPair key) {
+        leftKey = key;
+        rightKey = null;
+        next = null;
+        previous = null;
+    }
     public LeafNode() {
         leftKey = null;
         rightKey = null;
@@ -49,59 +51,7 @@ public class LeafNode<KVPair extends Comparable<? super KVPair>>
     }
 
     @Override
-    public boolean isFull() {
-        return leftKey != null && rightKey != null;
-    }
-
-    public LeafNode(KVPair leftKey, KVPair rightKey) {
-        super();
-        this.leftKey = leftKey;
-        this.rightKey = rightKey;
-    }
-
-    public KVPair getLeftKey() {
-        return leftKey;
-    }
-
-    public void setLeftKey(KVPair leftKey) {
-        this.leftKey = leftKey;
-    }
-
-    public KVPair getRightKey() {
-        return rightKey;
-    }
-
-    public void setRightKey(KVPair rightKey) {
-        this.rightKey = rightKey;
-    }
-
-    @Override
-    public boolean isEqual(Node node) {
-        LeafNode newNode = (LeafNode) node;
-        Boolean result = false;
-        if (newNode == null) {
-            return false;
-        }
-        if (newNode.getLeftKey() != null && this.getLeftKey() != null) {
-            result = newNode.leftKey.compareTo(this.leftKey) == 0;
-            if (newNode.getRightKey() != null && this.getRightKey() != null) {
-                result = newNode.rightKey.compareTo(this.rightKey) == 0;
-                return result;
-            }
-        }
-        return result;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder builder = new StringBuilder();
-        if (this.getLeftKey() != null) {
-            builder.append(this.getLeftKey().toString());
-        }
-        if (this.getRightKey() != null) {
-            builder.append(" ");
-            builder.append(this.getRightKey().toString());
-        }
-        return builder.toString();
+    public boolean isLeaf(){
+        return true;
     }
 }
