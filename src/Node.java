@@ -1,3 +1,5 @@
+import org.junit.Assert;
+
 /**
  *
  * @param <T>
@@ -20,13 +22,17 @@ public class Node<T extends Comparable<? super T>> {
 
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        if (this.getLeftKey() != null) {
+        // print keys first
+        if (leftKey != null) {
             builder.append(this.getLeftKey().toString());
+
         }
-        if (this.getRightKey() != null) {
-            builder.append(" ");
-            builder.append(this.getRightKey().toString());
+        if (rightKey != null) {
+            Assert.assertNotNull(leftKey);
+            builder.append(" ")
+                    .append(this.getRightKey().toString());
         }
+        builder.append(" ");
         return builder.toString();
     }
 

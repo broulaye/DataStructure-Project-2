@@ -13,13 +13,36 @@ public class TwoThreeTest extends TestCase
     }
     public void testInsert(){
         tree.add(new KVPair(new Handle(23), new Handle(0)));
+        System.out.println(tree.toString());
+        System.out.println("====================================");
+
         tree.add(new KVPair(new Handle(0), new Handle(23)));
+        System.out.println(tree.toString());
+        System.out.println("====================================");
+
         tree.add(new KVPair(new Handle(44), new Handle(2)));
+        System.out.println(tree.toString());
+        System.out.println("====================================");
+
         tree.add(new KVPair(new Handle(57), new Handle(44)));
+        System.out.println(tree.toString());
+        System.out.println("====================================");
+
         tree.add(new KVPair(new Handle(0), new Handle(23)));
+        System.out.println(tree.toString());
+        System.out.println("====================================");
+
         tree.add(new KVPair(new Handle(23), new Handle(0)));
+        System.out.println(tree.toString());
+        System.out.println("====================================");
+
         tree.add(new KVPair(new Handle(44), new Handle(57)));
+        System.out.println(tree.toString());
+        System.out.println("====================================");
+
         tree.add(new KVPair(new Handle(57), new Handle(44)));
+        System.out.println(tree.toString());
+        System.out.println("====================================");
         tree.add(new KVPair(new Handle(83), new Handle(99)));
         tree.add(new KVPair(new Handle(99), new Handle(83)));
         tree.add(new KVPair(new Handle(127), new Handle(146)));
