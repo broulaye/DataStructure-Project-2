@@ -69,6 +69,7 @@ public class IntNode extends Node<KVPair> {
     public void setMiddle(Node<KVPair> middle) {
         this.middle = middle;
     }
+    /**
     @Override
     public String toString(){
         StringBuilder builder = new StringBuilder();
@@ -89,7 +90,7 @@ public class IntNode extends Node<KVPair> {
         }
         return builder.toString();
     }
-
+*/
     @Override
     public boolean isFull(){
         if(leftKey != null && rightKey != null){

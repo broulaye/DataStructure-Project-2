@@ -24,13 +24,13 @@ public class Node<T extends Comparable<? super T>> {
         StringBuilder builder = new StringBuilder();
         // print keys first
         if (leftKey != null) {
-            builder.append(this.getLeftKey().toString());
+            builder.append(leftKey.toString());
 
         }
         if (rightKey != null) {
             Assert.assertNotNull(leftKey);
             builder.append(" ")
-                    .append(this.getRightKey().toString());
+                    .append(rightKey.toString());
         }
         builder.append(" ");
         return builder.toString();
@@ -50,6 +50,9 @@ public class Node<T extends Comparable<? super T>> {
 
     public void setRightKey(T rightKey) {
         this.rightKey = rightKey;
+    }
+    public boolean isEmpty() {
+        return leftKey == null && rightKey == null;
     }
 
 }

@@ -91,6 +91,42 @@ public class Processor {
      */
     private void delete(String artistName, String songName,
             PrintWriter writer) {
+        int artistPos = artistHashTable.get(artistName);
+        int songPos = songHashTable.get(songName);
+        if(artistPos < 0 || songPos < 0) {
+            if(artistPos < 0) {
+                writer.println(
+                        "|" + artistName + "| does not exist in the artist database.");
+            }
+            if(songPos < 0) {
+                writer.println(
+                        "|" + songName + "| does not exist in the song database.");
+            }
+        }
+        else {
+            Handle artistHandle = artistHashTable.getHandle(artistPos);
+            Handle songHandle = songHashTable.getHandle(songPos);
+
+            KVPair pair = new KVPair(artistHandle, songHandle);
+            theTree.remove(pair);
+            writer.println("The KVPair (|" + artistName + "|,|" + songName + "|) is deleted from the tree.");
+            KVPair reversePair = new KVPair(songHandle, artistHandle);
+            theTree.remove(reversePair);
+            writer.println("The KVPair (|" + songName + "|,|" + artistName + "|) is deleted from the tree.");
+
+            if(theTree.find(artistHandle) == null) {
+                artistHashTable.removeString(artistName);
+                writer.println(
+                        "|" + artistName + "| is deleted from the artist database.");
+            }
+
+            if(theTree.find(songHandle) == null) {
+                songHashTable.removeString(songName);
+                writer.println(
+                        "|" + songName + "| is deleted from the song database.");
+            }
+
+        }
     }
 
     /**
@@ -106,12 +142,89 @@ public class Processor {
      *            output stream
      */
     private void list(Type type, String str, PrintWriter writer) {
+        int pos;
+        str = str.trim();
+
         switch (type) {
             case Song:
-                // TODO:
+                pos = songHashTable.get(str);
+                if(pos < 0) {
+                    writer.println(
+                            "|" + str + "| does not exist in the song database.");
+                }
+                else {
+                    Handle songHandle = songHashTable.getHandle(pos);
+                    LeafNode songNode = theTree.find(songHandle);
+                    if(songNode.leftKey.key().compareTo(songHandle) == 0) {
+                        writer.print(songNode.leftKey.value());
+                    }
+                    else {
+                        writer.print(songNode.rightKey.value());
+                    }
+                    while(true){
+                        songNode = songNode.getNext();
+                        if(songNode == null) {
+                            break;
+                        }
+                        if(songNode.leftKey.key().compareTo(songHandle) == 0) {
+                            writer.print(songNode.leftKey.value());
+                        }
+                        else if(songNode.rightKey != null){
+                            if(songNode.rightKey.key().compareTo(songHandle) == 0) {
+                                writer.print(songNode.rightKey.value());
+                            }
+                            else {
+                                break;
+                            }
+                        }
+                        else {
+                            break;
+                        }
+                        
+                    }
+                    
+                }
+
                 break;
             case Artist:
-                // TODO:
+                pos = artistHashTable.get(str);
+                if(pos < 0) {
+                    writer.println(
+                            "|" + str + "| does not exist in the artist database.");
+                }
+                else {
+                    Handle artistHandle = artistHashTable.getHandle(pos);
+                    LeafNode artistNode = theTree.find(artistHandle);
+
+                    if(artistNode.leftKey.key().compareTo(artistHandle) == 0) {
+                        writer.print(artistNode.leftKey.value());
+                    }
+                    else {
+                        writer.print(artistNode.rightKey.value());
+                    }
+                    while(true){
+                        artistNode = artistNode.getNext();
+                        if(artistNode == null) {
+                            break;
+                        }
+                        if(artistNode.leftKey.key().compareTo(artistHandle) == 0) {
+                            writer.print(artistNode.leftKey.value());
+                        }
+                        else if(artistNode.rightKey != null){
+                            if(artistNode.rightKey.key().compareTo(artistHandle) == 0) {
+                                writer.print(artistNode.rightKey.value());
+                            }
+                            else {
+                                break;
+                            }
+                        }
+                        else {
+                            break;
+                        }
+
+                    }
+
+                }
                 break;
             default:
                 break;
@@ -155,10 +268,38 @@ public class Processor {
      */
     private void remove(Type what, String str, PrintWriter writer) {
         str = str.trim();
+        int pos = -1;
         if (what == Type.Song) {
-            if (songHashTable.removeString(str)) {
+            pos = songHashTable.get(str);
+            if (pos >= 0) {
+                Handle Handle = songHashTable.getHandle(pos);//create new handdle
+                LeafNode Node = theTree.find(Handle);//find the leaf corresponding to that handle
+                KVPair reverse = null;
+                while(Node != null){// while handle exist in tree repeat the following process
+                    if(Node.leftKey.key().compareTo(Handle) == 0) {//handle is equal to the left KVPair key
+                        reverse = new KVPair(Node.leftKey.value(), Node.leftKey.key());//the reverse of the KVPai
+                        writer.println("The KVPair (|" + str + "|,|" + artistHashTable.handle2String(Node.leftKey.value()) + "|) is deleted from the tree.");
+                        writer.println("The KVPair (|" + artistHashTable.handle2String(Node.leftKey.value()) + "|,|" + str + "|) is deleted from the tree.");
+                        theTree.remove(Node.leftKey);//remove the left KVPair
+                        theTree.remove(reverse);//remove the reverse
+
+                    }
+                    if(Node.rightKey != null) {// a right KVPair exist
+                        if(Node.rightKey.key().compareTo(Handle) == 0) {//handle is equal to the right KVPair key
+                            reverse = new KVPair(Node.rightKey.value(), Node.rightKey.key());//the reverse of the KVPair
+                            writer.println("The KVPair (|" + str + "|,|" + artistHashTable.handle2String(Node.rightKey.value()) + "|) is deleted from the tree.");
+                            writer.println("The KVPair (|" + str + "|,|" + artistHashTable.handle2String(Node.rightKey.value()) + "|) is deleted from the tree.");
+                            theTree.remove(Node.rightKey);//remove the right KVPair
+                            theTree.remove(reverse);//remove the reverse
+
+                        }
+                    }
+                    Node = theTree.find(Handle);//update the node
+                }
+                songHashTable.removeString(str);
                 writer.println(
-                        "|" + str + "| is removed from the song database.");
+                        "|" + str + "| is deleted from the song database.");
+
             }
             else {
                 writer.println(
@@ -166,9 +307,35 @@ public class Processor {
             }
         }
         else if (what == Type.Artist) {
-            if (artistHashTable.removeString(str)) {
+            pos = artistHashTable.get(str);
+            if (pos >= 0) {
+                Handle Handle = artistHashTable.getHandle(pos);//create new handdle
+                LeafNode Node = theTree.find(Handle);//find the leaf corresponding to that handle
+                KVPair reverse = null;
+                while(Node != null){// while handle exist in tree repeat the following process
+                    if(Node.leftKey.key().compareTo(Handle) == 0) {//handle is equal to the left KVPair key
+                        reverse = new KVPair(Node.leftKey.value(), Node.leftKey.key());//the reverse of the KVPair
+                        writer.println("The KVPair (|" + str + "|,|" + songHashTable.handle2String(Node.leftKey.value()) + "|) is deleted from the tree.");
+                        writer.println("The KVPair (|" + songHashTable.handle2String(Node.leftKey.value()) + "|,|" + str + "|) is deleted from the tree.");
+                        theTree.remove(Node.leftKey);//remove the left KVPair
+                        theTree.remove(reverse);//remove the reverse
+
+                    }
+                    if(Node.rightKey != null) {// a right KVPair exist
+                        if(Node.rightKey.key().compareTo(Handle) == 0) {//handle is equal to the right KVPair key
+                            reverse = new KVPair(Node.rightKey.value(), Node.rightKey.key());//the reverse of the KVPair
+                            writer.println("The KVPair (|" + str + "|,|" + songHashTable.handle2String(Node.rightKey.value()) + "|) is deleted from the tree.");
+                            writer.println("The KVPair (|" + str + "|,|" + songHashTable.handle2String(Node.rightKey.value()) + "|) is deleted from the tree.");
+                            theTree.remove(Node.rightKey);//remove the right KVPair
+                            theTree.remove(reverse);//remove the reverse
+
+                        }
+                    }
+                    Node = theTree.find(Handle);//update the node
+                }
+                artistHashTable.removeString(str);
                 writer.println(
-                        "|" + str + "| is removed from the artist database.");
+                        "|" + str + "| is deleted from the artist database.");
             }
             else {
                 writer.println(
@@ -176,6 +343,7 @@ public class Processor {
             }
 
         }
+
     }
 
     /**
@@ -199,14 +367,20 @@ public class Processor {
         Handle songHandle = songHashTable.insertString(song, writer);
         // then create and insert KVPair with artist as key and song as value
         KVPair artistAsKey = new KVPair(artistHandle, songHandle);
-        // TODO: make the function below ("add") return a boolean
-        System.out.println("tree.add(new KVPair(new Handle(" + artistHandle +"), new Handle(" + songHandle + ")));");
-        theTree.add(artistAsKey);
         // create then insert KVPair with song as key and artist value
         KVPair songAsKey = new KVPair(songHandle, artistHandle);
-        //System.out.println(songAsKey);
-        System.out.println("tree.add(new KVPair(new Handle(" + songHandle +"), new Handle(" + artistHandle + ")));");
-        theTree.add(songAsKey);
+
+        if(theTree.add(artistAsKey)) {
+            writer.println("The KVPair (|" + artist + "|,|" + song + "|),(" + artistHandle + "," + songHandle + ") is added to the tree.");
+            theTree.add(songAsKey);
+            writer.println("The KVPair (|" + song + "|,|" + artist + "|),(" + songHandle + "," + artistHandle + ") is added to the tree.");
+        }
+        else {
+            writer.println("The KVPair (|" + artist + "|,|" + song + "|),(" + artistHandle + "," + songHandle + ") duplicates a record already in the tree.");
+            writer.println("The KVPair (|" + song + "|,|" + artist + "|),(" + songHandle + "," + artistHandle + ") duplicates a record already in the tree.");
+        }
+
+
 
     }
 

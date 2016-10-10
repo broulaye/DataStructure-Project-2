@@ -103,7 +103,10 @@ public class Parser {
                         else {
                             System.out.println("Illegal type: " + line[1]);
                         }
-                        value = s.split("");
+                        for (int i = 2; i < line.length; i++) {
+                            s += line[i] + " ";
+                        }
+                        value[0] = s;
                         command.setValues(value);
                         break;
                     default:

@@ -51,7 +51,7 @@ public class Hash {
      *            string to be retrieved
      * @return position of retrieved string, -1 if not found
      */
-    public int get(String str) {
+    private int getP(String str) {
         int index = hash(str, valueArray.length);
         int pos = index;
         int i = 0;
@@ -65,6 +65,19 @@ public class Hash {
         while (pos != index);
         return -1;
     }
+
+    public Handle getHandle(int pos) {
+        if(pos < 0) {
+            return null;
+        }
+        return valueArray[pos];
+    }
+
+    public int get(String str) {
+        return getP(str);
+    }
+
+
 
     /**
      * get string for given handle
@@ -84,13 +97,11 @@ public class Hash {
      * @param writer
      *            used to return status of operation
      * @return handle resulting from insertion
-     * @throws Exception
-     *             when all possible slots have been proved and are occupied
      */
-    public Handle insertString(String str, PrintWriter writer)
-            throws Exception {
+    public Handle insertString(String str, PrintWriter writer) {
         int position = get(str);
         if (position != -1) {
+            writer.println("|" + str + "| duplicates a record already in the " + type + " database.");
             return valueArray[position];
         }
         if (numbElements + 1 > (valueArray.length >> 1)) {
@@ -110,6 +121,7 @@ public class Hash {
         // store handle after storing string in memory pool
         Handle aHandle = manager.insert(str, writer);
         valueArray[pos] = aHandle;
+        writer.println("|" + str + "| is added to the " + type + " database.");
         return aHandle;
     }
 

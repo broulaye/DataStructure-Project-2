@@ -12,6 +12,7 @@ public class TwoThreeTest extends TestCase
         tree = new TwoThree();
     }
     public void testInsert(){
+        /**
         tree.add(new KVPair(new Handle(23), new Handle(0)));
         System.out.println(tree.toString());
         System.out.println("====================================");
@@ -98,14 +99,200 @@ public class TwoThreeTest extends TestCase
         tree.add(new KVPair(new Handle(516), new Handle(531)));
         tree.add(new KVPair(new Handle(531), new Handle(516)));
         tree.add(new KVPair(new Handle(545), new Handle(560)));
+        //System.out.println(tree.print());
+         */
+    }
+
+    /**
+     * This test the deleting from the left
+     */
+    public void testDeleteLeft(){
+        tree.add(new KVPair(new Handle(7), new Handle(3)));
+        tree.add(new KVPair(new Handle(3), new Handle(7)));
+        tree.add(new KVPair(new Handle(7), new Handle(10)));
+        tree.add(new KVPair(new Handle(10), new Handle(7)));
+        tree.add(new KVPair(new Handle(3), new Handle(1)));
+        tree.add(new KVPair(new Handle(1), new Handle(3)));
+        tree.add(new KVPair(new Handle(10), new Handle(12)));
+        tree.add(new KVPair(new Handle(12), new Handle(10)));
+        tree.add(new KVPair(new Handle(1), new Handle(2)));
+        tree.add(new KVPair(new Handle(2), new Handle(1)));
+        tree.add(new KVPair(new Handle(12), new Handle(11)));
+        tree.add(new KVPair(new Handle(11), new Handle(12)));
+        tree.add(new KVPair(new Handle(12), new Handle(13)));
+        tree.add(new KVPair(new Handle(13), new Handle(12)));
+        //System.out.println(tree.print());
+        tree.remove(new KVPair(new Handle(1), new Handle(2)));
+        //System.out.println(tree.print());
+        tree.remove(new KVPair(new Handle(1), new Handle(3)));
+       // System.out.println(tree.print());
+        tree.remove(new KVPair(new Handle(2), new Handle(1)));
+       // System.out.println(tree.print());
+        tree.remove(new KVPair(new Handle(3), new Handle(1)));
+       // System.out.println(tree.print());
+    }
+
+    public void testDeleteMiddle(){
+        tree.add(new KVPair(new Handle(7), new Handle(100)));
+        tree.add(new KVPair(new Handle(8), new Handle(101)));
+        tree.add(new KVPair(new Handle(9), new Handle(102)));
+        tree.add(new KVPair(new Handle(10), new Handle(103)));
+        tree.add(new KVPair(new Handle(12), new Handle(104)));
+        tree.add(new KVPair(new Handle(13), new Handle(105)));
+        tree.add(new KVPair(new Handle(22), new Handle(106)));
+        tree.add(new KVPair(new Handle(1), new Handle(107)));
+        tree.add(new KVPair(new Handle(0), new Handle(108)));
+        tree.add(new KVPair(new Handle(11), new Handle(109)));
+        tree.add(new KVPair(new Handle(28), new Handle(110)));
+        tree.add(new KVPair(new Handle(50), new Handle(111)));
+        tree.add(new KVPair(new Handle(6), new Handle(112)));
+        tree.add(new KVPair(new Handle(4), new Handle(113)));
+        tree.add(new KVPair(new Handle(2), new Handle(114)));
+        /**
         System.out.println(tree.print());
-    }
-    public void testInsertLeft(){
+
+        tree.remove(new KVPair(new Handle(7), new Handle(100)));
+
+        System.out.println(tree.print());
+
+        tree.remove(new KVPair(new Handle(8), new Handle(101)));
+
+        System.out.println(tree.print());
+
+        tree.remove(new KVPair(new Handle(6), new Handle(112)));
+
+        System.out.println(tree.print());
+
+        tree.remove(new KVPair(new Handle(2), new Handle(114)));
+
+        System.out.println(tree.print());
+
+        tree.remove(new KVPair(new Handle(1), new Handle(107)));
+
+        System.out.println(tree.print());
+
+        tree.remove(new KVPair(new Handle(50), new Handle(111)));
+
+        System.out.println(tree.print());
+
+        tree.remove(new KVPair(new Handle(28), new Handle(110)));
+
+        System.out.println(tree.print());
+
+        tree.remove(new KVPair(new Handle(11), new Handle(109)));
+
+        System.out.println(tree.print());
+
+        tree.remove(new KVPair(new Handle(10), new Handle(103)));
+
+        System.out.println(tree.print());
+
+        tree.remove(new KVPair(new Handle(9), new Handle(102)));
+
+        System.out.println(tree.print());
+
+        tree.remove(new KVPair(new Handle(4), new Handle(113)));
+
+        System.out.println(tree.print());
+
+        tree.remove(new KVPair(new Handle(12), new Handle(104)));
+
+        System.out.println(tree.print());
+
+        tree.remove(new KVPair(new Handle(13), new Handle(105)));
+
+        System.out.println(tree.print());
+
+        tree.remove(new KVPair(new Handle(22), new Handle(106)));
+
+        System.out.println(tree.print());
+        */
 
     }
-    public void testInsertRight(){
+
+
+
+    public void testDeleteRight(){
+        tree.add(new KVPair(new Handle(7), new Handle(-1)));
+        tree.add(new KVPair(new Handle(8), new Handle(-1)));
+        tree.add(new KVPair(new Handle(9), new Handle(-1)));
+        tree.add(new KVPair(new Handle(10), new Handle(-1)));
+        tree.add(new KVPair(new Handle(12), new Handle(-1)));
+        tree.add(new KVPair(new Handle(13), new Handle(-1)));
+        tree.add(new KVPair(new Handle(22), new Handle(-1)));
+        tree.add(new KVPair(new Handle(1), new Handle(-1)));
+        tree.add(new KVPair(new Handle(0), new Handle(-1)));
+        tree.add(new KVPair(new Handle(11), new Handle(-1)));
+        tree.add(new KVPair(new Handle(28), new Handle(-1)));
+        tree.add(new KVPair(new Handle(50), new Handle(-1)));
+        tree.add(new KVPair(new Handle(6), new Handle(-1)));
+        tree.add(new KVPair(new Handle(4), new Handle(-1)));
+        tree.add(new KVPair(new Handle(2), new Handle(-1)));
+        tree.add(new KVPair(new Handle(30), new Handle(-1)));
+        tree.add(new KVPair(new Handle(35), new Handle(-1)));
+        tree.add(new KVPair(new Handle(40), new Handle(-1)));
+        tree.add(new KVPair(new Handle(45), new Handle(-1)));
+        tree.add(new KVPair(new Handle(55), new Handle(-1)));
+        tree.add(new KVPair(new Handle(60), new Handle(-1)));
+        /**
+        System.out.println(tree.print());
+
+        tree.remove(new KVPair(new Handle(60), new Handle(-1)));
+        System.out.println(tree.print());
+
+        tree.remove(new KVPair(new Handle(55), new Handle(-1)));
+        System.out.println(tree.print());
+
+        tree.remove(new KVPair(new Handle(50), new Handle(-1)));
+        System.out.println(tree.print());
+
+        tree.remove(new KVPair(new Handle(45), new Handle(-1)));
+        System.out.println(tree.print());
+
+        tree.remove(new KVPair(new Handle(40), new Handle(-1)));
+        System.out.println(tree.print());
+
+        tree.remove(new KVPair(new Handle(35), new Handle(-1)));
+        System.out.println(tree.print());
+
+        tree.remove(new KVPair(new Handle(30), new Handle(-1)));
+        System.out.println(tree.print());
+
+        tree.remove(new KVPair(new Handle(11), new Handle(-1)));
+        System.out.println(tree.print());
+
+        tree.remove(new KVPair(new Handle(10), new Handle(-1)));
+        System.out.println(tree.print());
+
+        tree.remove(new KVPair(new Handle(9), new Handle(-1)));
+        System.out.println(tree.print());
+
+        tree.remove(new KVPair(new Handle(0), new Handle(-1)));
+        System.out.println(tree.print());
+
+        tree.remove(new KVPair(new Handle(28), new Handle(-1)));
+        System.out.println(tree.print());
+
+        tree.remove(new KVPair(new Handle(22), new Handle(-1)));
+        System.out.println(tree.print());
+
+        tree.remove(new KVPair(new Handle(13), new Handle(-1)));
+        System.out.println(tree.print());
+
+        tree.remove(new KVPair(new Handle(12), new Handle(-1)));
+        System.out.println(tree.print());
+        */
+    }
+
+    public void testDeleteAll() {
+        tree.add(new KVPair(new Handle(7), new Handle(-1)));
+        System.out.println(tree.print());
+
+        tree.remove(new KVPair(new Handle(7), new Handle(-1)));
+        System.out.println(tree.print());
 
     }
+
     public void testPrint() {
 
     }
