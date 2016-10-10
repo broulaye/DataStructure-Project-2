@@ -1,9 +1,11 @@
 import student.TestCase;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
-
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 /**
  * @author Broulaye Doumbia
@@ -53,18 +55,49 @@ public class SearchTreeTest extends TestCase {
     /**
      * test sample file
      */
-    public void testSampleInputFile() {
+    public void testBadInputFile() {
         final String[] arguments = new String[3];
         arguments[0] = "10";
         arguments[1] = "32";
         arguments[2] = "bad-file.txt";
-        SearchTree.main(arguments);
-        arguments[2] = "P2_Input1_Sample.txt";
         SearchTree.main(arguments);
         String value = null;
         assertNull(value);
         SearchTree.main(null);
         arguments[0] = "-19";
         SearchTree.main(arguments);
+    }
+
+
+    // ----------------------------------------------------------
+    /**
+     * Read contents of a file into a string
+     * @param path File name
+     * @return the string
+     * @throws IOException
+     */
+    static String readFile(String path) throws IOException
+    {
+        byte[] encoded = Files.readAllBytes(Paths.get(path));
+        return new String(encoded);
+    }
+
+    // ----------------------------------------------------------
+    /**
+     * Test 13
+     * Comparing output in a file
+     *
+     * @throws Exception
+     */
+    public void testSampleInput()
+            throws Exception
+    {
+        String[] args = new String[3];
+        args[0] = "10";
+        args[1] = "32";
+        args[2] = "P2_Input1_Sample.txt";
+        String theOutput = readFile("P2_output1_Sample.txt");
+        SearchTree.main(args);
+        assertFuzzyEquals(theOutput, systemOut().getHistory());
     }
 }

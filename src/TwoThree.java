@@ -1,24 +1,26 @@
 import org.omg.CORBA.OBJECT_NOT_EXIST;
 
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
 
 public class TwoThree {
 
     private Node<KVPair> root;
 
 
-    public LeafNode find(Handle value) {
+    public KVPair find(Handle value) {
         return findHelper(root, value);
     }
 
-    private LeafNode findHelper(Node<KVPair> root, Handle value) {
+    private LeafNode findLeaf(Node<KVPair> root, Handle value) {
         if(root == null) {
             return null;
         }
         if(root instanceof LeafNode) {
             int compare = value.compareTo(root.leftKey.key());
             if(compare == 0) {
-                return (LeafNode) root;
+                return (LeafNode)root;
             }
             else {
                 if(root.rightKey != null) {
@@ -34,12 +36,83 @@ public class TwoThree {
         else {
             int compare = value.compareTo(root.leftKey.key());
             if(compare < 0) {
-                return findHelper(((IntNode)root).getLeft(), value);
+                return findLeaf(((IntNode)root).getLeft(), value);
             }
             else {
                 if(root.rightKey != null) {
                     compare = value.compareTo(root.rightKey.key());
                     if(compare > 0) {
+                        return findLeaf(((IntNode)root).getRight(), value);
+                    }
+                }
+                return findLeaf(((IntNode)root).getMiddle(), value);
+            }
+        }
+    }
+
+    public List<Handle> get(Handle value) {
+        List<Handle> handleList = new LinkedList<>();
+        LeafNode node = findLeaf(root, value);
+        if(node != null) {
+            if(node.leftKey.key().compareTo(value) == 0) {
+                handleList.add(node.leftKey.value());
+                //writer.print(node.leftKey.value());
+            }
+            else {
+                handleList.add(node.rightKey.value());
+            }
+        }
+
+        while(node != null){
+            node = node.getNext();
+            if(node.leftKey.key().compareTo(value) == 0) {
+                handleList.add(node.leftKey.value());
+            }
+            if(node.rightKey != null){
+                if(node.rightKey.key().compareTo(value) == 0) {
+                    handleList.add(node.rightKey.value());
+                }
+                else {
+                    break;
+                }
+            }
+            else {
+                break;
+            }
+
+        }
+        return handleList;
+    }
+
+    private KVPair findHelper(Node<KVPair> root, Handle value) {
+        if(root == null) {
+            return null;
+        }
+        if(root instanceof LeafNode) {
+            int compare = value.compareTo(root.leftKey.key());
+            if(compare == 0) {
+                return root.leftKey;
+            }
+            else {
+                if(root.rightKey != null) {
+                    compare = value.compareTo(root.rightKey.key());
+                    if(compare == 0) {
+                        return root.rightKey;
+                    }
+                }
+                return null;
+
+            }
+        }
+        else {
+            int compare = value.compareTo(root.leftKey.key());
+            if(compare < 0) {
+                return findHelper(((IntNode)root).getLeft(), value);
+            }
+            else {
+                if(root.rightKey != null) {
+                    compare = value.compareTo(root.rightKey.key());
+                    if(compare >= 0) {
                         return findHelper(((IntNode)root).getRight(), value);
                     }
                 }
@@ -371,7 +444,7 @@ public class TwoThree {
             return false;
         }
         if(root instanceof LeafNode) {//root is an leaf node
-            if(value.compareTo(root.leftKey) == 0) {// value is equal to left key
+            if(value.key().compareTo(root.leftKey.key()) == 0) {// value is equal to left key
                 root.leftKey = null;//delete left key
                 if(root.isEmpty()) {//check if root is empty
                     root = null;//if root is empty set it to null and return true
@@ -384,7 +457,7 @@ public class TwoThree {
                 if(root.rightKey == null) {//check if a right key exist
                     return false;//right value doesn't exist so value not in tree
                 }
-                else if(value.compareTo(root.rightKey) == 0) {//right value exist and is equal to value
+                else if(value.key().compareTo(root.rightKey.key()) == 0) {//right value exist and is equal to value
                     root.rightKey = null;//delete right key
                     return true;//return true
                 }
@@ -412,13 +485,13 @@ public class TwoThree {
         }
         KVPair promotedValue = null;
         if (root instanceof LeafNode) {
-            int compare = value.compareTo(root.leftKey);// compare value to leftVal
+            int compare = value.key().compareTo(root.leftKey.key());// compare value to leftVal
 
             if (compare > 0) {// check if value greater than leftVal
                 if (root.rightKey == null) {//if the right value is null than object doesn't exist
                     throw new OBJECT_NOT_EXIST("This value does not exist in the tree"); //Object is not present in the tree
                 }
-                compare = value.compareTo(root.rightKey);//else compare value to right value
+                compare = value.key().compareTo(root.rightKey.key());//else compare value to right value
 
                 if (compare == 0) {//right value need to be deleted
                     root.rightKey = null;
@@ -461,7 +534,7 @@ public class TwoThree {
         }
 
         if (root instanceof IntNode) {
-            int compare = value.compareTo(root.leftKey);// compare value to leftVal
+            int compare = value.key().compareTo(root.leftKey.key());// compare value to leftVal
             if (compare < 0) {// check if value less than leftVal if so delete from left
                 return deleteLeft(root, value, promotedValue);
             }
@@ -487,7 +560,7 @@ public class TwoThree {
 
     private Node<KVPair> deleteMiddle(Node<KVPair> root, KVPair value, KVPair promotedValue) {
         ((IntNode) root).setMiddle(deleteHelp(((IntNode) root).getMiddle(), value));//delete from the middle of the root
-        if (value.compareTo(root.leftKey) == 0) {
+        if (value.compareTo(root.leftKey) == 0 && promotedValue != null) {
             root.leftKey = promotedValue;// get rid of the key for the value that've been deleted
         }
         if (((IntNode) root).getMiddle() instanceof LeafNode) {//check if the root new middle value is a leaf
