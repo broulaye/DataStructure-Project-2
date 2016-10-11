@@ -1,0 +1,173 @@
+(0,32)
+total songs: 0
+total artists: 0
+Printing 2-3 tree:
+|Blind Lemon Jefferson| does not exist in the artist database.
+|Blind Lemon Jefferson| does not exist in the artist database.
+|Blind Lemon Jefferson| is added to the artist database.
+Memory pool expanded to be 64 bytes.
+|Long Lonesome Blues| is added to the song database.
+The KVPair (|Blind Lemon Jefferson|,|Long Lonesome Blues|),(0,23) is added to the tree.
+The KVPair (|Long Lonesome Blues|,|Blind Lemon Jefferson|),(23,0) is added to the tree.
+|Blind Lemon Jefferson| duplicates a record already in the artist database.
+|Long Lonesome Blues| duplicates a record already in the song database.
+The KVPair (|Blind Lemon Jefferson|,|Long Lonesome Blues|),(0,23) is added to the tree.
+The KVPair (|Long Lonesome Blues|,|Blind Lemon Jefferson|),(23,0) is added to the tree.
+|Bukka White| does not exist in the artist database.
+|Bukka White's first song| does not exist in the song database.
+|Bukka White's first song| does not exist in the song database.
+|Long Lonesome Blues| 5
+total songs: 1
+The KVPair (|Blind Lemon Jefferson|,|Long Lonesome Blues|) is deleted from the tree.
+The KVPair (|Long Lonesome Blues|,|Blind Lemon Jefferson|) is deleted from the tree.
+|Blind Lemon Jefferson| 0
+total artists: 1
+|Bukka White| is added to the artist database.
+Memory pool expanded to be 96 bytes.
+|Bukka White's first song| is added to the song database.
+The KVPair (|Bukka White|,|Bukka White's first song|),(44,57) is added to the tree.
+The KVPair (|Bukka White's first song|,|Bukka White|),(57,44) is added to the tree.
+(83,13)
+Printing 2-3 tree:
+23 0 
+  23 0 
+    0 23 
+    23 0 
+  44 57 
+    23 0 
+    44 57 57 44 
+Memory pool expanded to be 128 bytes.
+|Charley Patton| is added to the artist database.
+|Mississippi Boweavil Blues| is added to the song database.
+The KVPair (|Charley Patton|,|Mississippi Boweavil Blues|),(83,99) is added to the tree.
+The KVPair (|Mississippi Boweavil Blues|,|Charley Patton|),(99,83) is added to the tree.
+The KVPair (|Charley Patton|,|Mississippi Boweavil Blues|) is deleted from the tree.
+The KVPair (|Mississippi Boweavil Blues|,|Charley Patton|) is deleted from the tree.
+|Charley Patton| is deleted from the artist database.
+Memory pool expanded to be 160 bytes.
+|Sleepy John Estes| is added to the artist database.
+Memory pool expanded to be 192 bytes.
+|Street Car Blues| is added to the song database.
+The KVPair (|Sleepy John Estes|,|Street Car Blues|),(127,146) is added to the tree.
+The KVPair (|Street Car Blues|,|Sleepy John Estes|),(146,127) is added to the tree.
+|Bukka White| duplicates a record already in the artist database.
+|Bukka White's second song| is added to the song database.
+The KVPair (|Bukka White|,|Bukka White's second song|),(44,164) is added to the tree.
+The KVPair (|Bukka White's second song|,|Bukka White|),(164,44) is added to the tree.
+(83,16) -> (191,1)
+Memory pool expanded to be 224 bytes.
+|Another Bukka White| is added to the artist database.
+|Bukka White's first song| duplicates a record already in the song database.
+The KVPair (|Another Bukka White|,|Bukka White's first song|),(191,57) is added to the tree.
+The KVPair (|Bukka White's first song|,|Another Bukka White|),(57,191) is added to the tree.
+|Bukka White| duplicates a record already in the artist database.
+song hash table size doubled.
+Memory pool expanded to be 256 bytes.
+|Bukka White's third song| is added to the song database.
+The KVPair (|Bukka White|,|Bukka White's third song|),(44,212) is added to the tree.
+The KVPair (|Bukka White's third song|,|Bukka White|),(212,44) is added to the tree.
+|Another Bukka White| duplicates a record already in the artist database.
+|Bukka White's second song| duplicates a record already in the song database.
+The KVPair (|Another Bukka White|,|Bukka White's second song|),(191,164) is added to the tree.
+The KVPair (|Bukka White's second song|,|Another Bukka White|),(164,191) is added to the tree.
+|Bukka White| duplicates a record already in the artist database.
+Memory pool expanded to be 288 bytes.
+|Bukka White's fourth song| is added to the song database.
+The KVPair (|Bukka White|,|Bukka White's fourth song|),(44,238) is added to the tree.
+The KVPair (|Bukka White's fourth song|,|Bukka White|),(238,44) is added to the tree.
+|Another Bukka White| duplicates a record already in the artist database.
+|Bukka White's third song| duplicates a record already in the song database.
+The KVPair (|Another Bukka White|,|Bukka White's third song|),(191,212) is added to the tree.
+The KVPair (|Bukka White's third song|,|Another Bukka White|),(212,191) is added to the tree.
+|Johnny Winter| is added to the artist database.
+|Bukka White's first song| duplicates a record already in the song database.
+The KVPair (|Johnny Winter|,|Bukka White's first song|),(83,57) is added to the tree.
+The KVPair (|Bukka White's first song|,|Johnny Winter|),(57,83) is added to the tree.
+
+Printing 2-3 tree:
+57 44 191 57 
+  23 0 44 164 
+    23 0 
+      0 23 
+      23 0 
+    44 57 
+      23 0 
+      44 57 
+    44 212 
+      44 164 
+      44 212 44 238 
+  146 127 
+    57 191 127 146 
+      57 44 57 83 
+      57 191 83 57 
+      127 146 
+    164 44 
+      146 127 
+      164 44 164 191 
+  212 44 
+    191 164 
+      191 57 
+      191 164 191 212 
+    212 191 
+      212 44 
+      212 191 238 44 
+The KVPair (|Sleepy John Estes|,|Street Car Blues|) is deleted from the tree.
+The KVPair (|Street Car Blues|,|Sleepy John Estes|) is deleted from the tree.
+|Sleepy John Estes| is deleted from the artist database.
+|Street Car Blues| is deleted from the song database.
+191 
+57 164 
+The KVPair (|Bukka White|,|Bukka White's third song|) is deleted from the tree.
+The KVPair (|Bukka White's third song|,|Bukka White|) is deleted from the tree.
+The KVPair (|Bukka White|,|Bukka White's fourth song|) is deleted from the tree.
+The KVPair (|Bukka White's fourth song|,|Bukka White|) is deleted from the tree.
+The KVPair (|Bukka White|,|Bukka White's second song|) is deleted from the tree.
+The KVPair (|Bukka White's second song|,|Bukka White|) is deleted from the tree.
+The KVPair (|Bukka White|,|Bukka White's first song|) is deleted from the tree.
+The KVPair (|Bukka White's first song|,|Bukka White|) is deleted from the tree.
+|Bukka White| is deleted from the artist database.
+|Blind Lemon Jefferson| 0
+|Johnny Winter| 5
+|Another Bukka White| 7
+total artists: 3
+|Mississippi Boweavil Blues| 2
+|Bukka White's first song| 8
+|Long Lonesome Blues| 15
+|Bukka White's third song| 16
+|Bukka White's second song| 17
+|Bukka White's fourth song| 19
+total songs: 6
+The KVPair (|Bukka White's first song|,|Johnny Winter|) is deleted from the tree.
+The KVPair (|Johnny Winter|,|Bukka White's first song|) is deleted from the tree.
+The KVPair (|Bukka White's first song|,|Bukka White|) is deleted from the tree.
+The KVPair (|Bukka White|,|Bukka White's first song|) is deleted from the tree.
+|Bukka White's first song| is deleted from the song database.
+|Blind Lemon Jefferson| 0
+|Johnny Winter| 5
+|Another Bukka White| 7
+total artists: 3
+|Mississippi Boweavil Blues| 2
+|Long Lonesome Blues| 15
+|Bukka White's third song| 16
+|Bukka White's second song| 17
+|Bukka White's fourth song| 19
+total songs: 5
+|Johnny Winter| duplicates a record already in the artist database.
+|Johnny Winter's first song| is added to the song database.
+The KVPair (|Johnny Winter|,|Johnny Winter's first song|),(83,127) is added to the tree.
+The KVPair (|Johnny Winter's first song|,|Johnny Winter|),(127,83) is added to the tree.
+The KVPair (|Another Bukka White|,|Bukka White's second song|) is deleted from the tree.
+The KVPair (|Bukka White's second song|,|Another Bukka White|) is deleted from the tree.
+|Bukka White's second song| is deleted from the song database.
+(44,39) -> (98,1) -> (155,36) -> (265,23)
+|Blind Lemon Jefferson| 0
+|Johnny Winter| 5
+|Another Bukka White| 7
+total artists: 3
+|Johnny Winter's first song| 0
+|Mississippi Boweavil Blues| 2
+|Long Lonesome Blues| 15
+|Bukka White's third song| 16
+|Bukka White's fourth song| 19
+total songs: 5
+|Another Johnny Winter| is added to the artis

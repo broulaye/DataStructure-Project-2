@@ -265,6 +265,9 @@ public class Processor {
                         theTree.remove(pairToDelete);//remove the left KVPair
                         theTree.remove(reverse);//remove the reverse
                         pairToDelete = theTree.find(Handle);//update the node
+                        if(pairToDelete != null) {
+                            reverse = new KVPair(pairToDelete.value(), pairToDelete.key());
+                        }
                 }
                 artistHashTable.removeString(str);
                 writer.println(

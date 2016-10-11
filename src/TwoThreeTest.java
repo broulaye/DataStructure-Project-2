@@ -121,6 +121,7 @@ public class TwoThreeTest extends TestCase
         tree.add(new KVPair(new Handle(11), new Handle(12)));
         tree.add(new KVPair(new Handle(12), new Handle(13)));
         tree.add(new KVPair(new Handle(13), new Handle(12)));
+        /**
         //System.out.println(tree.print());
         tree.remove(new KVPair(new Handle(1), new Handle(2)));
         //System.out.println(tree.print());
@@ -130,6 +131,7 @@ public class TwoThreeTest extends TestCase
        // System.out.println(tree.print());
         tree.remove(new KVPair(new Handle(3), new Handle(1)));
        // System.out.println(tree.print());
+         */
     }
 
     public void testDeleteMiddle(){
@@ -213,27 +215,36 @@ public class TwoThreeTest extends TestCase
 
 
     public void testDeleteRight(){
-        tree.add(new KVPair(new Handle(7), new Handle(-1)));
-        tree.add(new KVPair(new Handle(8), new Handle(-1)));
-        tree.add(new KVPair(new Handle(9), new Handle(-1)));
-        tree.add(new KVPair(new Handle(10), new Handle(-1)));
-        tree.add(new KVPair(new Handle(12), new Handle(-1)));
-        tree.add(new KVPair(new Handle(13), new Handle(-1)));
-        tree.add(new KVPair(new Handle(22), new Handle(-1)));
-        tree.add(new KVPair(new Handle(1), new Handle(-1)));
-        tree.add(new KVPair(new Handle(0), new Handle(-1)));
-        tree.add(new KVPair(new Handle(11), new Handle(-1)));
-        tree.add(new KVPair(new Handle(28), new Handle(-1)));
-        tree.add(new KVPair(new Handle(50), new Handle(-1)));
-        tree.add(new KVPair(new Handle(6), new Handle(-1)));
-        tree.add(new KVPair(new Handle(4), new Handle(-1)));
-        tree.add(new KVPair(new Handle(2), new Handle(-1)));
-        tree.add(new KVPair(new Handle(30), new Handle(-1)));
-        tree.add(new KVPair(new Handle(35), new Handle(-1)));
-        tree.add(new KVPair(new Handle(40), new Handle(-1)));
-        tree.add(new KVPair(new Handle(45), new Handle(-1)));
-        tree.add(new KVPair(new Handle(55), new Handle(-1)));
-        tree.add(new KVPair(new Handle(60), new Handle(-1)));
+        tree.add(new KVPair(new Handle(7), new Handle(8)));
+        tree.add(new KVPair(new Handle(8), new Handle(7)));
+        tree.add(new KVPair(new Handle(9), new Handle(2)));
+        tree.add(new KVPair(new Handle(2), new Handle(9)));
+        tree.add(new KVPair(new Handle(12), new Handle(13)));
+        tree.add(new KVPair(new Handle(13), new Handle(12)));
+        tree.add(new KVPair(new Handle(22), new Handle(1)));
+        tree.add(new KVPair(new Handle(1), new Handle(22)));
+        tree.add(new KVPair(new Handle(0), new Handle(11)));
+        tree.add(new KVPair(new Handle(11), new Handle(0)));
+        tree.add(new KVPair(new Handle(28), new Handle(50)));
+        tree.add(new KVPair(new Handle(50), new Handle(28)));
+        tree.add(new KVPair(new Handle(6), new Handle(4)));
+        tree.add(new KVPair(new Handle(4), new Handle(6)));
+        tree.add(new KVPair(new Handle(2), new Handle(30)));
+        tree.add(new KVPair(new Handle(30), new Handle(2)));
+        tree.add(new KVPair(new Handle(35), new Handle(40)));
+        tree.add(new KVPair(new Handle(40), new Handle(35)));
+        tree.add(new KVPair(new Handle(45), new Handle(55)));
+        tree.add(new KVPair(new Handle(55), new Handle(45)));
+        tree.add(new KVPair(new Handle(45), new Handle(60)));
+        tree.add(new KVPair(new Handle(60), new Handle(45)));
+        System.out.println(tree.print());
+        tree.remove(new KVPair(new Handle(45), new Handle(55)));
+        System.out.println(tree.print());
+        tree.remove(new KVPair(new Handle(55), new Handle(45)));
+        System.out.println(tree.print());
+        tree.remove(new KVPair(new Handle(60), new Handle(45)));
+        System.out.println(tree.print());
+
         /**
         System.out.println(tree.print());
 
@@ -285,11 +296,13 @@ public class TwoThreeTest extends TestCase
     }
 
     public void testDeleteAll() {
+        /**
         tree.add(new KVPair(new Handle(7), new Handle(-1)));
         System.out.println(tree.print());
 
         tree.remove(new KVPair(new Handle(7), new Handle(-1)));
         System.out.println(tree.print());
+         */
 
     }
 
