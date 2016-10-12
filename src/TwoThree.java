@@ -335,6 +335,9 @@ public class TwoThree {
             KVPair pairs[] = {node.getLeftKey(), node.getRightKey(), key};
             //sort elements
             Arrays.sort(pairs);
+            if(pairs[0].compareTo(pairs[1]) == 0 || pairs[1].compareTo(pairs[2]) == 0){
+                throw new Exception("duplicate");
+            }
             node.setLeftKey(pairs[0]);
             node.setRightKey(null);
             // create new leaf node and insert to the right
@@ -974,10 +977,21 @@ public class TwoThree {
 
             }
             return root;
-
         }
-
-
+    }
+    /*Sanity Checker*/
+    public void sanityChecker(){
+        sanityCheckHelper(root);
+    }
+    private void sanityCheckHelper(Node<KVPair> node){
+        if(node != null){
+            node.isFull();
+            if(node instanceof IntNode){
+                sanityCheckHelper(((IntNode) node).getLeft());
+                sanityCheckHelper(((IntNode) node).getMiddle());
+                sanityCheckHelper(((IntNode) node).getRight());
+            }
+        }
     }
 
 }

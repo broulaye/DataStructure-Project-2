@@ -104,10 +104,10 @@ public class TwoThreeTest extends TestCase
     }
 
     public void testAddingDuplicates() {
-        tree.add(new KVPair(new Handle(545), new Handle(560)));
-        tree.add(new KVPair(new Handle(560), new Handle(560)));
-        tree.add(new KVPair(new Handle(545), new Handle(560)));
-        tree.add(new KVPair(new Handle(560), new Handle(560)));
+        assertTrue(tree.add(new KVPair(new Handle(545), new Handle(560))));
+        assertTrue(tree.add(new KVPair(new Handle(560), new Handle(560))));
+        assertFalse(tree.add(new KVPair(new Handle(545), new Handle(560))));
+        assertFalse(tree.add(new KVPair(new Handle(560), new Handle(560))));
         System.out.println("Duplicate Tree: ");
         System.out.println(tree.print());
     }
@@ -144,6 +144,7 @@ public class TwoThreeTest extends TestCase
     }
 
     public void testDeleteMiddle(){
+
         tree.add(new KVPair(new Handle(7), new Handle(100)));
         tree.add(new KVPair(new Handle(8), new Handle(101)));
         tree.add(new KVPair(new Handle(9), new Handle(102)));
