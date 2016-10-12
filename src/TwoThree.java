@@ -444,6 +444,7 @@ public class TwoThree {
 
     public boolean remove(KVPair value) {
         if(root == null) {
+            sanityChecker();
             return false;
         }
         if(root instanceof LeafNode) {//root is an leaf node
@@ -451,9 +452,13 @@ public class TwoThree {
                 root.leftKey = null;//delete left key
                 if(root.isEmpty()) {//check if root is empty
                     root = null;//if root is empty set it to null and return true
+                    sanityChecker();
                     return true;
                 }
+                // root is not empty so move right key to left
                 root.leftKey = root.rightKey;
+                root.rightKey = null;
+                sanityChecker();
                 return true;
             }
             else {// value is not equal to the left key
@@ -462,9 +467,11 @@ public class TwoThree {
                 }
                 else if(value.key().compareTo(root.rightKey.key()) == 0) {//right value exist and is equal to value
                     root.rightKey = null;//delete right key
+                    sanityChecker();
                     return true;//return true
                 }
                 else {//right value exist but not equal to value
+                    sanityChecker();
                     return false;
                 }
             }
@@ -473,23 +480,29 @@ public class TwoThree {
             try {
                 KVPair promotedValue = null;
                 deleteHelp(root, value, promotedValue);
-                if (root.isEmpty()) {
+                if (root.isEmpty()) {// if root is empty set its left child as new root
                     root = ((IntNode) root).getLeft();
                 }
-                else {
-                    if (value.compareTo(root.leftKey) == 0) {
+                else {// root is not empty (could be full), compare value to its left
+                    int compare = value.compareTo(root.leftKey);
+                    // value is equal to left key
+                    if (compare == 0) {
                         if(((IntNode) root).getMiddle() instanceof LeafNode) {
                             root.leftKey = ((IntNode) root).getMiddle().leftKey;// get rid of the key for the value that've been deleted
                         }
                         else {
                             KVPair promoted = findPromoted(((IntNode) root).getMiddle(), value);
                             root.leftKey = promoted;
+                            sanityChecker();
                         }
-
+                        sanityChecker();
                     }
+                    sanityChecker();
                 }
+                sanityChecker();
                 return true;
             } catch (Exception e) {
+                sanityChecker();
                 return false;
             }
         }

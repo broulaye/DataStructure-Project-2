@@ -56,14 +56,17 @@ public class Processor {
                     case delete:
                         delete(command.getValues()[0], command.getValues()[1],
                                 writer);
+                        theTree.sanityChecker();
                         break;
                     case insert:
                         insert(command.getValues()[0], command.getValues()[1],
                                 writer);
+                        theTree.sanityChecker();
                         break;
                     case remove:
                         remove(command.getTyp(), command.getValues()[0],
                                 writer);
+                        theTree.sanityChecker();
                         break;
                     case print:
                         printContent(command.getTyp(), writer);
