@@ -103,6 +103,15 @@ public class TwoThreeTest extends TestCase
 
     }
 
+    public void testAddingDuplicates() {
+        tree.add(new KVPair(new Handle(545), new Handle(560)));
+        tree.add(new KVPair(new Handle(560), new Handle(560)));
+        tree.add(new KVPair(new Handle(545), new Handle(560)));
+        tree.add(new KVPair(new Handle(560), new Handle(560)));
+        System.out.println("Duplicate Tree: ");
+        System.out.println(tree.print());
+    }
+
     /**
      * This test the deleting from the left
      */

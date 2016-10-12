@@ -497,13 +497,13 @@ public class TwoThree {
             throw new OBJECT_NOT_EXIST("This value does not exist in the tree"); //Object is not present in the tree
         }
         if (root instanceof LeafNode) {
-            int compare = value.key().compareTo(root.leftKey.key());// compare value to leftVal
+            int compare = value.compareTo(root.leftKey);// compare value to leftVal
 
             if (compare > 0) {// check if value greater than leftVal
                 if (root.rightKey == null) {//if the right value is null than object doesn't exist
                     throw new OBJECT_NOT_EXIST("This value does not exist in the tree"); //Object is not present in the tree
                 }
-                compare = value.key().compareTo(root.rightKey.key());//else compare value to right value
+                compare = value.compareTo(root.rightKey);//else compare value to right value
 
                 if (compare == 0) {//right value need to be deleted
                     root.rightKey = null;
@@ -546,7 +546,7 @@ public class TwoThree {
         }
 
         if (root instanceof IntNode) {
-            int compare = value.key().compareTo(root.leftKey.key());// compare value to leftVal
+            int compare = value.compareTo(root.leftKey);// compare value to leftVal
             if (compare < 0) {// check if value less than leftVal if so delete from left
                 return deleteLeft(root, value, promotedValue);
             }
@@ -558,7 +558,11 @@ public class TwoThree {
                 if (compare < 0) {//value less than right node so delete from the Middle
                     return deleteMiddle(root, value, promotedValue);
                 } else {//delete from right
-                    return deleteRight(root, value, promotedValue);
+                    deleteRight(root, value, promotedValue);
+                    if(((IntNode)root).getRight() == null) {
+                        root.rightKey = null;
+                    }
+                    return root;
                 }
             }
 
@@ -632,6 +636,7 @@ public class TwoThree {
                         leftNode.rightKey = null;
                         //the right pointer get removed
                         leftNode.setRight(null);
+                        //TODO: set root right key to null maybe
                         return root;
                     }
                     else if(((IntNode) root).getRight() != null && ((IntNode) root).getRight().isFull()){
@@ -852,7 +857,6 @@ public class TwoThree {
 
         if (((IntNode) root).getLeft() instanceof LeafNode) {//check if the root new left value is a leaf
             LeafNode leftNode = ((LeafNode) (((IntNode) root).getLeft()));
-            promotedValue = leftNode.leftKey;
             if ((((IntNode) root).getLeft()).isEmpty()) {//the left node was deleted. ASSUMPTION: root middle is a leaf
 
                 if ((((IntNode) root).getMiddle()).isFull()) {//if the middle is full borrow a value from it
@@ -893,8 +897,6 @@ public class TwoThree {
                         newNode.leftKey = middleNode.getLeft().leftKey;
                         //new node is pointing to the root left node
                         newNode.setLeft(((IntNode) root).getLeft());
-                        //root new left child is the new node
-                        ((IntNode) root).setLeft(newNode);
                         //new node middle child is the middle node left child
                         newNode.setMiddle(middleNode.getLeft());
                         //root new left key is the middle node left key
@@ -908,6 +910,8 @@ public class TwoThree {
                         middleNode.setMiddle(middleNode.getRight());
                         //the right pointer get removed
                         middleNode.setRight(null);
+                        //root new left child is the new node
+                        ((IntNode) root).setLeft(newNode);
                         return root;
                     }
                     else {//middle node has only two children
@@ -920,6 +924,7 @@ public class TwoThree {
                         if(((IntNode) root).getRight() != null) {//root have a right child
                             ((IntNode) root).setMiddle(((IntNode) root).getRight());
                             ((IntNode) root).setRight(null);
+                            root.leftKey = ((IntNode) root).getMiddle().leftKey;
                         }
                         else {//root does not have a right child
                             ((IntNode) root).setMiddle(null);
@@ -958,9 +963,12 @@ public class TwoThree {
                     middleNode.leftKey = root.leftKey;
                     root.leftKey = root.rightKey;
                     ((IntNode) root).setMiddle(((IntNode) root).getRight());
+                    root.rightKey = null;
                     if(((IntNode) root).getRight() != null) {
                         ((IntNode) root).setRight(null);
                     }
+
+
                     return root;
                 }
 
