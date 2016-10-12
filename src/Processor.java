@@ -242,8 +242,11 @@ public class Processor {
                         writer.println("The KVPair (|" + artistHashTable.handle2String(pairToDelete.value()) + "|,|" + str + "|) is deleted from the tree.");
                         theTree.remove(pairToDelete);//remove the left KVPair
                         theTree.remove(reverse);//remove the reverse
-                        pairToDelete = theTree.find(Handle);//update the node
+                    if(theTree.find(pairToDelete.value()) == null) {
+                        artistHashTable.removeString(artistHashTable.handle2String(pairToDelete.value()));
                     }
+                        pairToDelete = theTree.find(Handle);//update the node
+                }
                 songHashTable.removeString(str);
                 writer.println(
                         "|" + str + "| is deleted from the song database.");
@@ -264,6 +267,9 @@ public class Processor {
                         writer.println("The KVPair (|" + songHashTable.handle2String(pairToDelete.value()) + "|,|" + str + "|) is deleted from the tree.");
                         theTree.remove(pairToDelete);//remove the left KVPair
                         theTree.remove(reverse);//remove the reverse
+                        if(theTree.find(pairToDelete.value()) == null) {
+                            songHashTable.removeString(songHashTable.handle2String(pairToDelete.value()));
+                        }
                         pairToDelete = theTree.find(Handle);//update the node
                         if(pairToDelete != null) {
                             reverse = new KVPair(pairToDelete.value(), pairToDelete.key());

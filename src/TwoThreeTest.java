@@ -12,7 +12,7 @@ public class TwoThreeTest extends TestCase
         tree = new TwoThree();
     }
     public void testInsert(){
-        /**
+
         tree.add(new KVPair(new Handle(23), new Handle(0)));
         System.out.println(tree.toString());
         System.out.println("====================================");
@@ -100,7 +100,7 @@ public class TwoThreeTest extends TestCase
         tree.add(new KVPair(new Handle(531), new Handle(516)));
         tree.add(new KVPair(new Handle(545), new Handle(560)));
         //System.out.println(tree.print());
-         */
+
     }
 
     /**
@@ -121,7 +121,7 @@ public class TwoThreeTest extends TestCase
         tree.add(new KVPair(new Handle(11), new Handle(12)));
         tree.add(new KVPair(new Handle(12), new Handle(13)));
         tree.add(new KVPair(new Handle(13), new Handle(12)));
-        /**
+
         //System.out.println(tree.print());
         tree.remove(new KVPair(new Handle(1), new Handle(2)));
         //System.out.println(tree.print());
@@ -131,7 +131,7 @@ public class TwoThreeTest extends TestCase
        // System.out.println(tree.print());
         tree.remove(new KVPair(new Handle(3), new Handle(1)));
        // System.out.println(tree.print());
-         */
+
     }
 
     public void testDeleteMiddle(){
@@ -150,7 +150,7 @@ public class TwoThreeTest extends TestCase
         tree.add(new KVPair(new Handle(6), new Handle(112)));
         tree.add(new KVPair(new Handle(4), new Handle(113)));
         tree.add(new KVPair(new Handle(2), new Handle(114)));
-        /**
+
         System.out.println(tree.print());
 
         tree.remove(new KVPair(new Handle(7), new Handle(100)));
@@ -208,7 +208,7 @@ public class TwoThreeTest extends TestCase
         tree.remove(new KVPair(new Handle(22), new Handle(106)));
 
         System.out.println(tree.print());
-        */
+
 
     }
 
@@ -244,8 +244,18 @@ public class TwoThreeTest extends TestCase
         System.out.println(tree.print());
         tree.remove(new KVPair(new Handle(60), new Handle(45)));
         System.out.println(tree.print());
+        tree.remove(new KVPair(new Handle(28), new Handle(50)));
+        System.out.println(tree.print());
+        tree.remove(new KVPair(new Handle(30), new Handle(2)));
+        System.out.println(tree.print());
+        tree.remove(new KVPair(new Handle(6), new Handle(4)));
+        System.out.println(tree.print());
+        tree.remove(new KVPair(new Handle(7), new Handle(8)));
+        System.out.println(tree.print());
+        tree.remove(new KVPair(new Handle(8), new Handle(7)));
+        System.out.println(tree.print());
 
-        /**
+
         System.out.println(tree.print());
 
         tree.remove(new KVPair(new Handle(60), new Handle(-1)));
@@ -292,17 +302,17 @@ public class TwoThreeTest extends TestCase
 
         tree.remove(new KVPair(new Handle(12), new Handle(-1)));
         System.out.println(tree.print());
-        */
+
     }
 
     public void testDeleteAll() {
-        /**
+
         tree.add(new KVPair(new Handle(7), new Handle(-1)));
         System.out.println(tree.print());
 
         tree.remove(new KVPair(new Handle(7), new Handle(-1)));
         System.out.println(tree.print());
-         */
+
 
     }
 
