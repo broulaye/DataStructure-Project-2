@@ -10,10 +10,22 @@ public class TwoThree {
     private Node<KVPair> root;
 
 
+    /**
+     * find a KVPair with the given value
+     * @param value to find
+     * @return a KVPair
+     */
     public KVPair find(Handle value) {
-        return findHelper(root, value);
+        KVPair pair =  new KVPair(value, null);
+        return findHelper(root, pair);
     }
-
+    /**
+     * find the lowest leaf corresponding
+     * to the given value
+     * @param root root of the current tree
+     * @param value represent value to find
+     * @return a leaf node
+     */
     private LeafNode findLeaf(Node<KVPair> root, Handle value) {
         if(root == null) {
             return null;
@@ -31,7 +43,6 @@ public class TwoThree {
                     }
                 }
                 return null;
-
             }
         }
         else {
@@ -54,20 +65,30 @@ public class TwoThree {
             }
         }
     }
-
-    public List<Handle> get(Handle value) {
+    /**
+     * Find the given KVPair in the tree
+     * @param pair KVPair to find
+     * @return the  KVPair or null if not found
+     */
+    public KVPair findPair(KVPair pair) {
+        return findHelper(root, pair);
+    }
+    /**
+     * get a list of Handles corresponding to the given value
+     * @param value given value
+     * @return List of Handles
+     */
+    public List<Handle> getHandleList(Handle value) {
         List<Handle> handleList = new LinkedList<>();
         LeafNode node = findLeaf(root, value);
         if(node != null) {
             if(node.leftKey.key().compareTo(value) == 0) {
                 handleList.add(node.leftKey.value());
-                //writer.print(node.leftKey.value());
             }
             else {
                 handleList.add(node.rightKey.value());
             }
         }
-
         while(node != null){
             node = node.getNext();
             if(node.leftKey.key().compareTo(value) == 0) {
@@ -84,44 +105,65 @@ public class TwoThree {
             else {
                 break;
             }
-
         }
         return handleList;
     }
-
-    private KVPair findHelper(Node<KVPair> root, Handle value) {
+    /**
+     * find the KVPair that contains the given key
+     * @param root represent root of tree
+     * @param pair represent KVPair to find
+     * @return KVPair with given key
+     */
+    private KVPair findHelper(Node<KVPair> root, KVPair pair) {
         if(root == null) {
             return null;
         }
+        int compare;
+        if(pair.value() !=  null) {
+            compare = pair.compareTo(root.leftKey);
+        }
+        else {
+            compare = pair.key().compareTo(root.leftKey.key());
+        }
         if(root instanceof LeafNode) {
-            int compare = value.compareTo(root.leftKey.key());
             if(compare == 0) {
                 return root.leftKey;
             }
             else {
                 if(root.rightKey != null) {
-                    compare = value.compareTo(root.rightKey.key());
+                    if(pair.value() !=  null) {
+                        compare = pair.compareTo(root.rightKey);
+                    }
+                    else {
+                        compare = pair.key().compareTo(root.rightKey.key());
+                    }
                     if(compare == 0) {
                         return root.rightKey;
                     }
                 }
                 return null;
-
             }
         }
         else {
-            int compare = value.compareTo(root.leftKey.key());
             if(compare < 0) {
-                return findHelper(((IntNode)root).getLeft(), value);
+                return findHelper(((IntNode)root).getLeft(), pair);
             }
             else {
                 if(root.rightKey != null) {
-                    compare = value.compareTo(root.rightKey.key());
-                    if(compare >= 0) {
-                        return findHelper(((IntNode)root).getRight(), value);
+                    if (pair.value() != null) {
+                        compare = pair.compareTo(root.rightKey);
+                    } else {
+                        compare = pair.key().compareTo(root.rightKey.key());
+                    }
+                    if (compare >= 0) {
+                        return findHelper(((IntNode) root).getRight(), pair);
                     }
                 }
-                return findHelper(((IntNode)root).getMiddle(), value);
+                KVPair temp = findHelper(((IntNode)root).getLeft(), pair);
+                if(temp != null) {
+                    return temp;
+                }
+                return findHelper(((IntNode)root).getMiddle(), pair);
             }
         }
     }
@@ -206,13 +248,13 @@ public class TwoThree {
                 Node<KVPair> temp = insertHelp(((IntNode) root).getMiddle(), key);
                 if (temp != null) {
                     //split
-                    IntNode newNode = new IntNode(root.rightKey);
-                    root.rightKey = null;
-                    newNode.setLeft(((IntNode) root).getRight());
+                    IntNode newNode = new IntNode(root.getRightKey());
+                    root.setRightKey(null);
+                    newNode.setLeft(((IntNode) temp).getLeft());
+                    newNode.setMiddle(((IntNode) root).getRight());
                     ((IntNode) root).setRight(null);
                     IntNode newRoot = new IntNode(temp.getLeftKey());
                     newRoot.setLeft(root);
-                    newNode.setMiddle(((IntNode) temp).getLeft());
                     newRoot.setMiddle(newNode);
                     root = newRoot;
                 }
@@ -293,7 +335,7 @@ public class TwoThree {
                 if(compare == 0){
                     throw new Exception("duplicate");
                 }
-                if(compare >= 0){// key is greater than right key
+                if(compare > 0){// key is greater than right key
                     // insert in right child then check state of temp
                     Node<KVPair> temp = insertHelp(((IntNode)node).getRight(), key);
                     if(temp == null){
@@ -1046,6 +1088,10 @@ public class TwoThree {
             }
         }
     }
+
+    /**
+     *
+     */
     public void structureChecker(){
         structureCheck(root);
     }
@@ -1058,9 +1104,13 @@ public class TwoThree {
                 // left and middle children of internal node must exist
                 Assert.assertNotNull(((IntNode) node).getLeft());
                 Assert.assertNotNull(((IntNode) node).getMiddle());
-                // check left key of left child
+                if(((IntNode) node).getLeft().getLeftKey().compareTo(node.getLeftKey()) != -1){
+                    System.out.print("GOTCHA!\n");
+                    System.out.println(print(node, 0));
+                }
+                // check left key of left child is lesser than node's left key
                 Assert.assertTrue(((IntNode) node).getLeft().getLeftKey().compareTo(node.getLeftKey()) == -1);
-                //check structure of left subtree
+                // check structure of left subtree
                 structureCheck(((IntNode) node).getLeft());
                 //check left key of middle child
                 int compareMiddle = node.getLeftKey().compareTo(((IntNode) node).getMiddle().getLeftKey());

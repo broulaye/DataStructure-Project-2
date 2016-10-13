@@ -48,7 +48,9 @@ public class Processor {
         try {
             PrintWriter writer = new PrintWriter("output.txt", "UTF-8");
             LinkedList<Command> list = commands.getCommandList();
+            int counter = -1;
             for (Command command : list) {
+                counter++;
                 switch (command.getOp()) {
                     case list:
                         list(command.getTyp(), command.getValues()[0], writer);
@@ -56,14 +58,17 @@ public class Processor {
                     case delete:
                         delete(command.getValues()[0], command.getValues()[1],
                                 writer);
+                        theTree.structureChecker();
                         break;
                     case insert:
                         insert(command.getValues()[0], command.getValues()[1],
                                 writer);
+                        theTree.structureChecker();
                         break;
                     case remove:
                         remove(command.getTyp(), command.getValues()[0],
                                 writer);
+                        theTree.structureChecker();
                         break;
                     case print:
                         printContent(command.getTyp(), writer);
@@ -157,7 +162,7 @@ public class Processor {
                 }
                 else {
                     Handle songHandle = songHashTable.getHandle(pos);
-                    List<Handle> songHandles = theTree.get(songHandle);
+                    List<Handle> songHandles = theTree.getHandleList(songHandle);
                     ListIterator<Handle> listIterator = songHandles.listIterator();
                     while(listIterator.hasNext()) {
                         writer.print(listIterator.next());
@@ -175,7 +180,7 @@ public class Processor {
                 }
                 else {
                     Handle artistHandle = artistHashTable.getHandle(pos);
-                    List<Handle> artistHandles = theTree.get(artistHandle);
+                    List<Handle> artistHandles = theTree.getHandleList(artistHandle);
                     ListIterator<Handle> listIterator = artistHandles.listIterator();
                     while(listIterator.hasNext()) {
                         writer.print(listIterator.next());

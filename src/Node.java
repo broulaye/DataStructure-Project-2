@@ -16,10 +16,6 @@ public class Node<T extends Comparable<? super T>> {
         return leftKey != null && rightKey != null;
     }
 
-    public boolean isEqual(Node<T> aNode) {
-        return this.equals(aNode);
-    }
-
     public String toString() {
         StringBuilder builder = new StringBuilder();
         // print keys first
