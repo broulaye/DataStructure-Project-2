@@ -1,3 +1,4 @@
+import org.junit.Assert;
 import org.omg.CORBA.OBJECT_NOT_EXIST;
 
 import java.util.Arrays;
@@ -44,6 +45,10 @@ public class TwoThree {
                     if(compare > 0) {
                         return findLeaf(((IntNode)root).getRight(), value);
                     }
+                }
+                LeafNode temp = findLeaf(((IntNode)root).getMiddle(), value);
+                if (temp != null) {
+                    return temp;
                 }
                 return findLeaf(((IntNode)root).getMiddle(), value);
             }
@@ -263,10 +268,10 @@ public class TwoThree {
                     node.setLeftKey(temp.getLeftKey());
                     IntNode newNode = new IntNode(node.getRightKey());
                     node.setRightKey(null);
-                    newNode.setLeft(((IntNode) node).getRight());
-                    newNode.setMiddle(((IntNode) temp).getLeft());
+                    newNode.setLeft(((IntNode) node).getMiddle());
+                    newNode.setMiddle(((IntNode) node).getRight());
                     ((IntNode) node).setRight(null);
-                    node.setLeftKey(temp.getLeftKey());
+                    ((IntNode) node).setMiddle(((IntNode) temp).getLeft());
                     promoter.setLeft(newNode);
                     // return new node to indicate split
                     return promoter;
@@ -594,7 +599,9 @@ public class TwoThree {
                     middleNode.leftKey = (((IntNode) root).getRight()).leftKey;//middle node new left value will be the right node left value
                     (((IntNode) root).getRight()).leftKey = null;//right node left key will be null
                     ((IntNode) root).getRight().leftKey = ((IntNode) root).getRight().rightKey;
-                    root.leftKey = (((IntNode) root).getMiddle()).leftKey;//set the root new left value
+                    ((IntNode) root).getRight().rightKey = null;
+                    root.leftKey = middleNode.leftKey;//set the root new left value
+                    root.rightKey = ((IntNode) root).getRight().leftKey;
                     return root;
                 } else { // left node has only one key and can't borrow from right
 
@@ -1028,6 +1035,7 @@ public class TwoThree {
     public void sanityChecker(){
         sanityCheckHelper(root);
     }
+
     private void sanityCheckHelper(Node<KVPair> node){
         if(node != null){
             node.isFull();
@@ -1038,5 +1046,43 @@ public class TwoThree {
             }
         }
     }
-
+    public void structureChecker(){
+        structureCheck(root);
+    }
+    private void structureCheck(Node<KVPair> node){
+        if(node!= null){
+            //left key must exist
+            Assert.assertNotNull(node.getLeftKey());
+            if(node instanceof IntNode){
+                //node is an internal node
+                // left and middle children of internal node must exist
+                Assert.assertNotNull(((IntNode) node).getLeft());
+                Assert.assertNotNull(((IntNode) node).getMiddle());
+                // check left key of left child
+                Assert.assertTrue(((IntNode) node).getLeft().getLeftKey().compareTo(node.getLeftKey()) == -1);
+                //check structure of left subtree
+                structureCheck(((IntNode) node).getLeft());
+                //check left key of middle child
+                int compareMiddle = node.getLeftKey().compareTo(((IntNode) node).getMiddle().getLeftKey());
+                Assert.assertTrue(compareMiddle == 0 || compareMiddle == -1);
+                //check structure of middle subtree
+                structureCheck(((IntNode) node).getMiddle());
+                //check right key of node if existent
+                if(node.getRightKey() != null){
+                    // check inferiority of left key then check that right child exists
+                    Assert.assertTrue(node.getLeftKey().compareTo(node.getRightKey()) == -1);
+                    Assert.assertNotNull(((IntNode) node).getRight());
+                    //check left key of right child
+                    int compareRight = node.getRightKey().compareTo(((IntNode) node).getRight().getLeftKey());
+                    Assert.assertTrue(compareRight == 0 || compareRight == -1);
+                    // check structure of right child
+                    structureCheck(((IntNode) node).getRight());
+                }
+            }
+            //node is a leaf node
+            if(node.getRightKey() != null){
+                Assert.assertTrue(node.getLeftKey().compareTo(node.getRightKey()) == -1);
+            }
+        }
+    }
 }

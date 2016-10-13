@@ -99,6 +99,8 @@ public class TwoThreeTest extends TestCase
         tree.add(new KVPair(new Handle(516), new Handle(531)));
         tree.add(new KVPair(new Handle(531), new Handle(516)));
         tree.add(new KVPair(new Handle(545), new Handle(560)));
+        tree.structureChecker();
+        tree.sanityChecker();
         //System.out.println(tree.print());
 
     }

@@ -56,24 +56,20 @@ public class Processor {
                     case delete:
                         delete(command.getValues()[0], command.getValues()[1],
                                 writer);
-                        theTree.sanityChecker();
                         break;
                     case insert:
                         insert(command.getValues()[0], command.getValues()[1],
                                 writer);
-                        theTree.sanityChecker();
                         break;
                     case remove:
                         remove(command.getTyp(), command.getValues()[0],
                                 writer);
-                        theTree.sanityChecker();
                         break;
                     case print:
                         printContent(command.getTyp(), writer);
                         break;
                     default:
                         break;
-
                 }
             }
             writer.close();
@@ -168,7 +164,6 @@ public class Processor {
                         writer.print(" ");
                     }
                     writer.println();
-                    
                 }
 
                 break;
@@ -264,6 +259,7 @@ public class Processor {
             if (pos >= 0) {
                 Handle Handle = artistHashTable.getHandle(pos);//create new handdle
                 KVPair pairToDelete = theTree.find(Handle);//find the KVPair corresponding to that handle
+
                 KVPair reverse = new KVPair(pairToDelete.value(), pairToDelete.key());
                 while(pairToDelete != null){// while handle exist in tree repeat the following process
                         writer.println("The KVPair (|" + str + "|,|" + songHashTable.handle2String(pairToDelete.value()) + "|) is deleted from the tree.");
@@ -316,8 +312,10 @@ public class Processor {
         KVPair songAsKey = new KVPair(songHandle, artistHandle);
 
         if(theTree.add(artistAsKey)) {
+            theTree.structureChecker();
             writer.println("The KVPair (|" + artist + "|,|" + song + "|),(" + artistHandle + "," + songHandle + ") is added to the tree.");
             theTree.add(songAsKey);
+            theTree.structureChecker();
             writer.println("The KVPair (|" + song + "|,|" + artist + "|),(" + songHandle + "," + artistHandle + ") is added to the tree.");
         }
         else {

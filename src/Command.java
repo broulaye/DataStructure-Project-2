@@ -105,15 +105,12 @@ public class Command {
     @Override
     public String toString() {
         StringBuilder s = new StringBuilder();
-
         if (op != null) {
             s.append(op.toString()).append(" ");
         }
-
         if (typ != null) {
             s.append(typ.toString()).append(" ");
         }
-
         if (values != null) {
 
             for (int i = 0; i < values.length; i++) {
@@ -122,10 +119,7 @@ public class Command {
                     s.append(" ");
                 }
             }
-
         }
-
         return s.toString();
-
     }
 }

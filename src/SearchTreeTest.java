@@ -96,7 +96,7 @@ public class SearchTreeTest extends TestCase {
         args[0] = "10";
         args[1] = "32";
         args[2] = "P2_Input1_Sample.txt";
-        String theOutput = readFile("P2_output1_Sample.txt");
+        String theOutput = readFile("P2_Output1_Sample.txt");
         SearchTree.main(args);
         assertFuzzyEquals(theOutput, systemOut().getHistory());
     }
