@@ -1,5 +1,3 @@
-import org.junit.Assert;
-
 /**
  * This class represent an Internal Node
  * 
@@ -20,23 +18,6 @@ public class IntNode extends Node<KVPair> {
         leftKey = null;
     }
 
-    /**
-     * Copy constructor
-     * 
-     * @param root
-     *            node to be copied
-     */
-    public IntNode(IntNode root) {
-        if (root == null) {
-            new IntNode();
-        }
-        left = root.getLeft();
-        right = root.getRight();
-        middle = root.getMiddle();
-        leftKey = root.getLeftKey();
-        rightKey = root.getRightKey();
-    }
-
     public IntNode(KVPair key) {
         leftKey = key;
         rightKey = null;
@@ -44,7 +25,6 @@ public class IntNode extends Node<KVPair> {
         middle = null;
         left = null;
     }
-
 
     public Node<KVPair> getLeft() {
         return left;
@@ -69,40 +49,19 @@ public class IntNode extends Node<KVPair> {
     public void setMiddle(Node<KVPair> middle) {
         this.middle = middle;
     }
+
     /**
+     * Returns true is node is full
+     * 
+     * @return
+     */
     @Override
-    public String toString(){
-        StringBuilder builder = new StringBuilder();
-        builder.append(super.toString());
-        if(rightKey != null){
-            Assert.assertTrue(isFull());
-        }
-        if(left != null){
-            builder.append(left.toString());
-        }
-        if(middle != null){
-            Assert.assertNotNull(left);
-            builder.append(middle.toString());
-        }
-        if(right != null){
-            Assert.assertNotNull(middle);
-            builder.append(right.toString());
-        }
-        return builder.toString();
+    public boolean isFull() {
+        return leftKey != null && rightKey != null;
     }
-*/
+
     @Override
-    public boolean isFull(){
-        if(leftKey != null && rightKey != null){
-            Assert.assertNotNull(left);
-            Assert.assertNotNull(middle);
-            Assert.assertNotNull(right);
-            return true;
-        }
-        return false;
-    }
-    @Override
-    public boolean isLeaf(){
+    public boolean isLeaf() {
         return false;
     }
 }

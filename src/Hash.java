@@ -66,18 +66,26 @@ public class Hash {
         return -1;
     }
 
+    /**
+     * return the handle at the given position
+     * @param pos represent the position
+     * @return a handle
+     */
     public Handle getHandle(int pos) {
-        if(pos < 0) {
+        if (pos < 0) {
             return null;
         }
         return valueArray[pos];
     }
 
+    /**
+     * returns the position of the handle for str
+     * @param str the string to get
+     * @return the position of that string
+     */
     public int get(String str) {
         return getP(str);
     }
-
-
 
     /**
      * get string for given handle
@@ -101,7 +109,8 @@ public class Hash {
     public Handle insertString(String str, PrintWriter writer) {
         int position = get(str);
         if (position != -1) {
-            writer.println("|" + str + "| duplicates a record already in the " + type + " database.");
+            writer.println("|" + str + "| duplicates a record already in the "
+                    + type + " database.");
             return valueArray[position];
         }
         if (numbElements + 1 > (valueArray.length >> 1)) {
@@ -171,8 +180,6 @@ public class Hash {
      *            The size of the hash table
      * @return The home slot for that string
      */
-    // This is private for distributing hash function in a way that will
-    // pass milestone 1 without change.
     private int hash(String s, int m) {
         int intLength = s.length() / 4;
         long sum = 0;

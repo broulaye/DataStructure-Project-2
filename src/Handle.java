@@ -5,8 +5,7 @@
  * @version 9/15/2016
  */
 
-public class Handle
-{
+public class Handle {
     /**
      * The position for the associated message in the memory pool
      */
@@ -17,6 +16,7 @@ public class Handle
      */
 
     private boolean tombstone;
+
     // ----------------------------------------------------------
     /**
      * Create a new Handle object.
@@ -27,7 +27,6 @@ public class Handle
     public Handle(int p) {
         thePos = p;
     }
-
 
     // ----------------------------------------------------------
     /**
@@ -40,15 +39,14 @@ public class Handle
     public int compareTo(Handle it) {
         if (thePos < it.pos()) {
             return -1;
-        } 
+        }
         else if (thePos == it.pos()) {
             return 0;
-        } 
+        }
         else {
             return 1;
         }
     }
-
 
     // ----------------------------------------------------------
     /**
@@ -59,7 +57,6 @@ public class Handle
     public int pos() {
         return thePos;
     }
-
 
     // ----------------------------------------------------------
     /**
@@ -80,7 +77,8 @@ public class Handle
     public boolean isTombStone() {
         return tombstone;
     }
-    //------------------------------------------------------------
+
+    // ------------------------------------------------------------
     /**
      * set the tombstone
      */

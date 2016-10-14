@@ -15,7 +15,7 @@ public class HandleTest extends TestCase {
     public void setUp() {
         // Nothing Here.
     }
-    
+
     /**
      * Test the Handle class.
      */

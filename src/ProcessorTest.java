@@ -26,18 +26,16 @@ public class ProcessorTest extends TestCase {
         catch (Exception e) {
             assertTrue(e instanceof FileNotFoundException);
         }
-        
+
         try {
             processor = new Processor(10, 30, "P1sampleInput.txt");
         }
         catch (Exception e) {
             e.printStackTrace();
         }
-        
-        
+
     }
-    
-    
+
     /**
      * Test Process method
      */
@@ -51,5 +49,5 @@ public class ProcessorTest extends TestCase {
         String assertionValue = null;
         assertNull(assertionValue);
     }
-    
+
 }

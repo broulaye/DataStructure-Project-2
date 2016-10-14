@@ -15,7 +15,7 @@ import java.nio.file.Paths;
 public class SearchTreeTest extends TestCase {
     private MemManager pool;
     private PrintWriter writer;
-    
+
     /**
      * Sets up the tests that follow. In general, used for initialization
      */
@@ -37,7 +37,7 @@ public class SearchTreeTest extends TestCase {
         assertNotNull(mem);
         SearchTree.main(null);
     }
-    
+
     /**
      * test insert
      */
@@ -51,7 +51,7 @@ public class SearchTreeTest extends TestCase {
         String value = null;
         assertNull(value);
     }
-    
+
     /**
      * test sample file
      */
@@ -68,30 +68,27 @@ public class SearchTreeTest extends TestCase {
         SearchTree.main(arguments);
     }
 
-
     // ----------------------------------------------------------
     /**
      * Read contents of a file into a string
-     * @param path File name
+     * 
+     * @param path
+     *            File name
      * @return the string
      * @throws IOException
      */
-    static String readFile(String path) throws IOException
-    {
+    static String readFile(String path) throws IOException {
         byte[] encoded = Files.readAllBytes(Paths.get(path));
         return new String(encoded);
     }
 
     // ----------------------------------------------------------
     /**
-     * Test 13
-     * Comparing output in a file
+     * Test 13 Comparing output in a file
      *
      * @throws Exception
      */
-    public void testSampleInput()
-            throws Exception
-    {
+    public void testSampleInput() throws Exception {
         String[] args = new String[3];
         args[0] = "10";
         args[1] = "32";
@@ -99,5 +96,8 @@ public class SearchTreeTest extends TestCase {
         String theOutput = readFile("P2_Output1_Sample.txt");
         SearchTree.main(args);
         assertFuzzyEquals(theOutput, systemOut().getHistory());
+        args[2] = "Test_Input.txt";
+        SearchTree.main(args);
     }
+
 }

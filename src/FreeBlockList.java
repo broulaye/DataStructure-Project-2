@@ -44,7 +44,7 @@ public class FreeBlockList extends DLLinkedList<Block> {
         else {
             add(new Block(oldLength, oldLength + additionalLength - 1));
         }
-        
+
         poolLength += additionalLength;
     }
 

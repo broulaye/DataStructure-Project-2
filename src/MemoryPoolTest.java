@@ -42,7 +42,7 @@ public class MemoryPoolTest extends TestCase {
         pool.put(string, word.length(), writer);
         assertEquals(1, pool.numbOfFreeBlocks());
         assertEquals(20, pool.getSize());
-        pool.toString();
+        System.out.print(pool.toString());
         pool.printFreeBlocks();
     }
 
@@ -71,6 +71,7 @@ public class MemoryPoolTest extends TestCase {
         assertEquals("(0,10)", pool.printFreeBlocks());
 
     }
+
     /**
      * Remove on empty pool
      */
@@ -82,6 +83,7 @@ public class MemoryPoolTest extends TestCase {
         String noString = pool.getStringAt(at);
         assertEquals("", noString);
     }
+
     /**
      * Fill up space then print free blocks
      */
@@ -94,5 +96,5 @@ public class MemoryPoolTest extends TestCase {
         assertEquals(8, pool.getSize());
         pool.printFreeBlocks();
     }
-    
+
 }
